@@ -33,6 +33,8 @@ The project combines software structure, software metrics, and software relation
 
 For questions, research collaboration, or further information about GhrandalCodeCity, please use the contact information associated with the project repository.
 
+RafatAls3ode@gmail.com
+
 ---
 
 ## GhrandalCodeCity
