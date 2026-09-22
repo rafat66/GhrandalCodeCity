@@ -65,4 +65,5 @@ Visualizing Object-Oriented Software Systems as 3D Cities
 
 If you use GhrandalCodeCity in academic research, please cite the associated publication:
 
-Ra'Fat Al-Msie'deen. "Visualizing Object-Oriented Software Systems as 3D Cities". 2026.
+[1] Ra'Fat Al-Msie'deen. "Visualizing Object-Oriented Software Systems as 3D Cities". 2026.
+[2] Ra'Fat Al-Msie'deen, "GhrandalCodeCity," GitHub repository, 2026. [Online]. Available: https://github.com/rafat66/GhrandalCodeCity.
