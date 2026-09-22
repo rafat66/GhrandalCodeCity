@@ -6,7 +6,7 @@ GhrandalCodeCity is a standalone Java/Swing software visualization tool that rep
 
 The tool is designed for software comprehension, software architecture exploration, software visualization, and research involving object-oriented software systems.
 
-<img src="Figures/My3DRectangle.png" alt="Drawing Shapes Software" width="350"><br>
+<img src="Figures/GUI.png" alt="Drawing Shapes Software" width="350"><br>
 Figure 3. Graphical user interface of Drawing Shapes Software – Version 2 showing all supported shapes: Line, Rectangle, Oval, and 3D Rectangle.
 
 ---
