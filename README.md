@@ -29,8 +29,8 @@ Software relationships	                --- > Visual connections between building
 
 This representation allows developers and researchers to explore the organization and internal structure of software systems through an intuitive spatial metaphor.
 
-<img src="Figures/SoftwareCity.png" alt="Graphical User Interface of GhrandalCodeCity" width="600"><br>
-Figure 2. Graphical User Interface of GhrandalCodeCity
+<img src="Figures/SoftwareCity.png" alt="The GhrandalCodeCity software city metaphor" width="600"><br>
+Figure 2. The GhrandalCodeCity software city metaphor and its visual metrics
 
 ---
 
