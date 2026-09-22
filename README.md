@@ -6,8 +6,8 @@ GhrandalCodeCity is a standalone Java/Swing software visualization tool that rep
 
 The tool is designed for software comprehension, software architecture exploration, software visualization, and research involving object-oriented software systems.
 
-<img src="Figures/GUI.png" alt="Graphical user interface GhrandalCodeCity" width="800"><br>
-Figure 1. Graphical user interface GhrandalCodeCity
+<img src="Figures/GUI.png" alt="Graphical User Interface of GhrandalCodeCity" width="800"><br>
+Figure 1. Graphical User Interface of GhrandalCodeCity
 
 ---
 
@@ -28,6 +28,9 @@ Local variables and other class members	--- > Additional visual symbols <br>
 Software relationships	                --- > Visual connections between buildings <br>
 
 This representation allows developers and researchers to explore the organization and internal structure of software systems through an intuitive spatial metaphor.
+
+<img src="Figures/SoftwareCity.png" alt="Graphical User Interface of GhrandalCodeCity" width="600"><br>
+Figure 2. Graphical User Interface of GhrandalCodeCity
 
 ---
 
