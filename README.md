@@ -7,7 +7,25 @@ GhrandalCodeCity is a standalone Java/Swing software visualization tool that rep
 The tool is designed for software comprehension, software architecture exploration, software visualization, and research involving object-oriented software systems.
 
 
+---
 
+## Overview
+
+GhrandalCodeCity transforms the structure of an object-oriented software system into a three-dimensional city.
+
+The visualization establishes a direct correspondence between software entities and city elements:
+
+Software Element	                      --- > City Representation
+Entire software system	                --- > Root district
+Package	                                --- > District
+Nested package	                        --- > Nested district
+Class	                                  --- > Building
+Methods	                                --- > Building height and floors
+Attributes	                            --- > Building base size and associated visual elements
+Local variables and other class members	--- > Additional visual symbols
+Software relationships	                --- > Visual connections between buildings
+
+This representation allows developers and researchers to explore the organization and internal structure of software systems through an intuitive spatial metaphor.
 
 ---
 
