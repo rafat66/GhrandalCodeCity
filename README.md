@@ -26,3 +26,7 @@ For questions, research collaboration, or further information about GhrandalCode
 ##GhrandalCodeCity
 
 Visualizing Object-Oriented Software Systems as 3D Cities
+
+Citation
+
+If you use GhrandalCodeCity in academic research, please cite the associated publication:
