@@ -16,14 +16,14 @@ GhrandalCodeCity transforms the structure of an object-oriented software system 
 The visualization establishes a direct correspondence between software entities and city elements:
 
 Software Element	                      --- > City Representation <br>
-Entire software system	                --- > Root district
-Package	                                --- > District
-Nested package	                        --- > Nested district
-Class	                                  --- > Building
-Methods	                                --- > Building height and floors
-Attributes	                            --- > Building base size and associated visual elements
-Local variables and other class members	--- > Additional visual symbols
-Software relationships	                --- > Visual connections between buildings
+Entire software system	                --- > Root district <br>
+Package	                                --- > District <br>
+Nested package	                        --- > Nested district <br>
+Class	                                  --- > Building <br>
+Methods	                                --- > Building height and floors <br>
+Attributes	                            --- > Building base size and associated visual elements <br>
+Local variables and other class members	--- > Additional visual symbols <br>
+Software relationships	                --- > Visual connections between buildings <br>
 
 This representation allows developers and researchers to explore the organization and internal structure of software systems through an intuitive spatial metaphor.
 
