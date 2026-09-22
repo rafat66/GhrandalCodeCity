@@ -1,8 +1,15 @@
-# GhrandalCodeCity
+## GhrandalCodeCity
 A 3D Software City tool for analyzing and visualizing object-oriented source code, software metrics, and code relationships.
 
+----
 
+##Related Research
 
+GhrandalCodeCity is associated with research on visualizing object-oriented software systems as three-dimensional cities.
+
+Research topic:
+
+Visualizing Object-Oriented Software Systems as 3D Cities
 ---
 ##Acknowledgment
 
