@@ -64,7 +64,7 @@ RafatAls3ode@gmail.com
 
 Visualizing Object-Oriented Software Systems as 3D Cities
 
-<img src="Figures/GUI2.png" alt="The GhrandalCodeCity software city metaphor" width="600"><br>
+<img src="Figures/GUI2.png" alt="Graphical User Interface of GhrandalCodeCity" width="600"><br>
 
 ---
 
