@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project ProjectName="OnlineShoppingSystem">
+  <Packages>
+    <Package PackageName="com">
+      <Classes />
+    </Package>
+    <Package PackageName="com.shop">
+      <Classes />
+    </Package>
+    <Package PackageName="com.shop.model">
+      <Classes>
+        <Class ClassName="Product" LOC="77" classAccessLevel="public" isInterface="false" Superclass="Object" DeclaredPackage="com.shop.model" NOC="12">
+          <SuperInterfaces />
+          <Compositions />
+          <Comments>
+            <Comment CommentText="Represents a product available in the online shopping system This class contains product information and price related operations" />
+            <Comment CommentText="Class attributes" />
+            <Comment CommentText="Static attribute" />
+            <Comment CommentText="Creates a new product" />
+            <Comment CommentText="Returns the product price" />
+            <Comment CommentText="Updates the product price" />
+            <Comment CommentText="Calculates the discounted price of the product" />
+            <Comment CommentText="Local variables" />
+            <Comment CommentText="Calculates the final price including tax" />
+            <Comment CommentText="Local variable" />
+            <Comment CommentText="Returns the product name" />
+            <Comment CommentText="Returns the product category" />
+          </Comments>
+          <Attributes>
+            <Attribute AttributeName="id" AttributeAccessLevel="private" AttributeType="int" isStaticAttribute="false" />
+            <Attribute AttributeName="name" AttributeAccessLevel="private" AttributeType="String" isStaticAttribute="false" />
+            <Attribute AttributeName="price" AttributeAccessLevel="private" AttributeType="double" isStaticAttribute="false" />
+            <Attribute AttributeName="category" AttributeAccessLevel="private" AttributeType="String" isStaticAttribute="false" />
+            <Attribute AttributeName="taxRate" AttributeAccessLevel="private" AttributeType="double" isStaticAttribute="true" />
+          </Attributes>
+          <Methods>
+            <Method MethodName="Product" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="Product">
+              <Parameters NumberOfParameters="4">
+                <Parameter ParameterName="id" ParameterType="int" />
+                <Parameter ParameterName="name" ParameterType="String" />
+                <Parameter ParameterName="price" ParameterType="double" />
+                <Parameter ParameterName="category" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="id" AttributeAccessType="int" HowIsItUsed="this.id" AccessedIn="Product" />
+                <AttributeAccess AttributeAccessName="name" AttributeAccessType="String" HowIsItUsed="this.name" AccessedIn="Product" />
+                <AttributeAccess AttributeAccessName="price" AttributeAccessType="double" HowIsItUsed="this.price" AccessedIn="Product" />
+                <AttributeAccess AttributeAccessName="category" AttributeAccessType="String" HowIsItUsed="this.category" AccessedIn="Product" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="this.id" RightHandSide="id" />
+                <Assignment LeftHandSide="this.name" RightHandSide="name" />
+                <Assignment LeftHandSide="this.price" RightHandSide="price" />
+                <Assignment LeftHandSide="this.category" RightHandSide="category" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getPrice" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="double" DeclaredClass="Product">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="price" AttributeAccessType="double" HowIsItUsed="return price;&#xA;" AccessedIn="getPrice" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setPrice" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="Product">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="price" ParameterType="double" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="price" AttributeAccessType="double" HowIsItUsed="this.price" AccessedIn="setPrice" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="this.price" RightHandSide="price" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="calculateDiscount" MethodAccessLevel="public" isStaticMethod="true" MethodReturnType="double" DeclaredClass="Product">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="price" ParameterType="double" />
+                <Parameter ParameterName="discountRate" ParameterType="double" />
+              </Parameters>
+              <LocalVariables>
+                <LocalVariable LocalVariableName="discount" LocalVariableType="double" />
+                <LocalVariable LocalVariableName="finalPrice" LocalVariableType="double" />
+              </LocalVariables>
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="calculateFinalPrice" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="double" DeclaredClass="Product">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables>
+                <LocalVariable LocalVariableName="tax" LocalVariableType="double" />
+                <LocalVariable LocalVariableName="finalPrice" LocalVariableType="double" />
+              </LocalVariables>
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="price" AttributeAccessType="double" HowIsItUsed="price * taxRate" AccessedIn="calculateFinalPrice" />
+                <AttributeAccess AttributeAccessName="taxRate" AttributeAccessType="double" HowIsItUsed="price * taxRate" AccessedIn="calculateFinalPrice" />
+                <AttributeAccess AttributeAccessName="price" AttributeAccessType="double" HowIsItUsed="price + tax" AccessedIn="calculateFinalPrice" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getName" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="String" DeclaredClass="Product">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="name" AttributeAccessType="String" HowIsItUsed="return name;&#xA;" AccessedIn="getName" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getCategory" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="String" DeclaredClass="Product">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="category" AttributeAccessType="String" HowIsItUsed="return category;&#xA;" AccessedIn="getCategory" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Package>
+    <Package PackageName="com.shop.order">
+      <Classes>
+        <Class ClassName="Order" LOC="95" classAccessLevel="public" isInterface="false" Superclass="Object" DeclaredPackage="com.shop.order" NOC="14">
+          <SuperInterfaces />
+          <Compositions>
+            <Composition ObjectName="products" ClassName="List" />
+          </Compositions>
+          <Comments>
+            <Comment CommentText="Represents a customer order in the online shopping system An order contains products and provides operations for adding products calculating the total and submitting the order" />
+            <Comment CommentText="Class attributes" />
+            <Comment CommentText="Creates a new order" />
+            <Comment CommentText="Adds a product to the order" />
+            <Comment CommentText="Attribute access" />
+            <Comment CommentText="Local variable" />
+            <Comment CommentText="Calculates the total price of all products in the order" />
+            <Comment CommentText="Local variables" />
+            <Comment CommentText="Attribute access" />
+            <Comment CommentText="Method invocation" />
+            <Comment CommentText="Submits the order" />
+            <Comment CommentText="Returns the order identifier" />
+            <Comment CommentText="Returns the total order price" />
+            <Comment CommentText="Returns the products contained in the order" />
+          </Comments>
+          <Attributes>
+            <Attribute AttributeName="orderId" AttributeAccessLevel="private" AttributeType="int" isStaticAttribute="false" />
+            <Attribute AttributeName="products" AttributeAccessLevel="private" AttributeType="List&lt;Product&gt;" isStaticAttribute="false" />
+            <Attribute AttributeName="total" AttributeAccessLevel="private" AttributeType="double" isStaticAttribute="false" />
+          </Attributes>
+          <Methods>
+            <Method MethodName="Order" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="Order">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="orderId" ParameterType="int" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="orderId" AttributeAccessType="int" HowIsItUsed="this.orderId" AccessedIn="Order" />
+                <AttributeAccess AttributeAccessName="products" AttributeAccessType="List&lt;Product&gt;" HowIsItUsed="this.products" AccessedIn="Order" />
+                <AttributeAccess AttributeAccessName="total" AttributeAccessType="double" HowIsItUsed="this.total" AccessedIn="Order" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="this.orderId" RightHandSide="orderId" />
+                <Assignment LeftHandSide="this.products" RightHandSide="new ArrayList&lt;&gt;()" />
+                <Assignment LeftHandSide="this.total" RightHandSide="0.0" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="addProduct" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="Order">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="product" ParameterType="Product" />
+              </Parameters>
+              <LocalVariables>
+                <LocalVariable LocalVariableName="price" LocalVariableType="double" />
+                <LocalVariable LocalVariableName="discountedPrice" LocalVariableType="double" />
+              </LocalVariables>
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="products" AttributeAccessType="List&lt;Product&gt;" HowIsItUsed="products.add(product)" AccessedIn="addProduct" />
+                <AttributeAccess AttributeAccessName="total" AttributeAccessType="double" HowIsItUsed="total+=discountedPrice" AccessedIn="addProduct" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="add" Arguments="[product]" InvokedBy="addProduct" />
+                <MethodInvocation MethodInvocationName="getPrice" Arguments="[]" InvokedBy="addProduct" />
+                <MethodInvocation MethodInvocationName="calculateDiscount" Arguments="[price, 0.10]" InvokedBy="addProduct" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="total" RightHandSide="discountedPrice" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="calculateTotal" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="double" DeclaredClass="Order">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables>
+                <LocalVariable LocalVariableName="subtotal" LocalVariableType="double" />
+                <LocalVariable LocalVariableName="price" LocalVariableType="double" />
+                <LocalVariable LocalVariableName="discountedPrice" LocalVariableType="double" />
+              </LocalVariables>
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="products" AttributeAccessType="List&lt;Product&gt;" HowIsItUsed="for (Product product : products) {&#xA;  double price=product.getPrice();&#xA;  double discountedPrice=Product.calculateDiscount(price,0.10);&#xA;  subtotal+=discountedPrice;&#xA;}&#xA;" AccessedIn="calculateTotal" />
+                <AttributeAccess AttributeAccessName="total" AttributeAccessType="double" HowIsItUsed="total=subtotal" AccessedIn="calculateTotal" />
+                <AttributeAccess AttributeAccessName="total" AttributeAccessType="double" HowIsItUsed="return total;&#xA;" AccessedIn="calculateTotal" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="getPrice" Arguments="[]" InvokedBy="calculateTotal" />
+                <MethodInvocation MethodInvocationName="calculateDiscount" Arguments="[price, 0.10]" InvokedBy="calculateTotal" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="subtotal" RightHandSide="discountedPrice" />
+                <Assignment LeftHandSide="total" RightHandSide="subtotal" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="submit" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="Order">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables>
+                <LocalVariable LocalVariableName="orderTotal" LocalVariableType="double" />
+              </LocalVariables>
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="orderId" AttributeAccessType="int" HowIsItUsed="&quot;Order &quot; + orderId + &quot; submitted. Total: &quot;+ orderTotal" AccessedIn="submit" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="calculateTotal" Arguments="[]" InvokedBy="submit" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Order &quot; + orderId + &quot; submitted. Total: &quot;+ orderTotal]" InvokedBy="submit" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getOrderId" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="int" DeclaredClass="Order">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="orderId" AttributeAccessType="int" HowIsItUsed="return orderId;&#xA;" AccessedIn="getOrderId" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getTotal" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="double" DeclaredClass="Order">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="total" AttributeAccessType="double" HowIsItUsed="return total;&#xA;" AccessedIn="getTotal" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getProducts" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="List&lt;Product&gt;" DeclaredClass="Order">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="products" AttributeAccessType="List&lt;Product&gt;" HowIsItUsed="return products;&#xA;" AccessedIn="getProducts" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Package>
+  </Packages>
+</Project>

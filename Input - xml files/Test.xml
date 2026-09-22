@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project ProjectName="Drawing shapes software">
+  <Packages>
+    <Package PackageName="coreFrame">
+      <Classes>
+        <Class ClassName="MyShape" LOC="73" classAccessLevel="public" isInterface="true" Superclass="MyShape" DeclaredPackage="coreFrame" NOC="25">
+          <SuperInterfaces />
+          <Compositions>
+            <Composition ObjectName="color" ClassName="Color" />
+          </Compositions>
+          <Comments>
+            <Comment CommentText="Superclass for all shape objects" />
+            <Comment CommentText="constructor" />
+            <Comment CommentText="end constructor" />
+          </Comments>
+          <Attributes>
+            <Attribute AttributeName="x1" AttributeAccessLevel="private" AttributeType="int" isStaticAttribute="false" />
+            <Attribute AttributeName="y1" AttributeAccessLevel="private" AttributeType="int" isStaticAttribute="false" />
+            <Attribute AttributeName="x2" AttributeAccessLevel="private" AttributeType="int" isStaticAttribute="false" />
+            <Attribute AttributeName="y2" AttributeAccessLevel="private" AttributeType="int" isStaticAttribute="false" />
+            <Attribute AttributeName="color" AttributeAccessLevel="private" AttributeType="Color" isStaticAttribute="false" />
+          </Attributes>
+          <Methods>
+            <Method MethodName="MyShape" MethodAccessLevel="public" isStaticMethod="true" MethodReturnType="constructor" DeclaredClass="MyShape">
+              <Parameters NumberOfParameters="5">
+                <Parameter ParameterName="firstX" ParameterType="int" />
+                <Parameter ParameterName="firstY" ParameterType="int" />
+                <Parameter ParameterName="secondX" ParameterType="int" />
+                <Parameter ParameterName="secondY" ParameterType="int" />
+                <Parameter ParameterName="shapeColor" ParameterType="Color" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations>
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setX1" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="MyShape">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="x" ParameterType="int" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="x1" RightHandSide="x" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getX1" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="int" DeclaredClass="MyShape">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setY1" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="MyShape">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="y" ParameterType="int" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="y1" RightHandSide="y" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getY1" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="int" DeclaredClass="MyShape">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setX2" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="MyShape">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="x" ParameterType="int" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="x2" RightHandSide="x" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getX2" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="int" DeclaredClass="MyShape">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setY2" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="MyShape">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="y" ParameterType="int" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="y2" RightHandSide="y" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getY2" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="int" DeclaredClass="MyShape">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setColor" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="MyShape">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="c" ParameterType="Color" />
+              </Parameters>
+              <LocalVariables>
+                <LocalVariable LocalVariableName="nextShape" LocalVariableType="MyShape" />
+                <LocalVariable LocalVariableName="shapesIterator" LocalVariableType="Iterator" />
+              </LocalVariables>
+			   <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="firstPoint" AttributeAccessType="int" HowIsItUsed="firstPoint" AccessedIn="setColor" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="color" RightHandSide="c" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getColor" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="Color" DeclaredClass="MyShape">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="draw" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="MyShape">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="g" ParameterType="Graphics" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+   </Classes>
+    </Package>
+  </Packages>
+</Project>

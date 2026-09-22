@@ -1,0 +1,2103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project ProjectName="Mobile photo software" ProjectLOC="1594">
+  <Packages>
+    <Package PackageName="ubc">
+      <Classes />
+    </Package>
+    <Package PackageName="ubc.midp">
+      <Classes />
+    </Package>
+    <Package PackageName="ubc.midp.mobilephoto">
+      <Classes />
+    </Package>
+    <Package PackageName="ubc.midp.mobilephoto.core">
+      <Classes />
+    </Package>
+    <Package PackageName="ubc.midp.mobilephoto.core.threads">
+      <Classes>
+        <Class ClassName="BaseThread" LOC="27" classAccessLevel="public" isInterface="false" DeclaredPackage="ubc.midp.mobilephoto.core.threads" NOC="3">
+          <SuperInterfaces>
+            <Interface InterfaceName="Runnable" />
+          </SuperInterfaces>
+          <Compositions />
+          <Comments>
+            <Comment CommentText="Base Thread class Most commands will execute within a thread to avoid screen contention and hardware interrupts At the moment there is no useful functionality beyond what Runnable already provides But we may wish to add some parent features in later" />
+            <Comment CommentText="Constructor" />
+            <Comment CommentText="Start the thread running" />
+          </Comments>
+          <Attributes />
+          <Methods>
+            <Method MethodName="BaseThread" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="BaseThread">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;BaseThread:: 0 Param Constructor used: Using default values&quot;]" InvokedBy="BaseThread" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="run" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="BaseThread">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Starting BaseThread::run()&quot;]" InvokedBy="run" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Finishing Baseathread::run()&quot;]" InvokedBy="run" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Package>
+    <Package PackageName="ubc.midp.mobilephoto.core.ui">
+      <Classes>
+        <Class ClassName="MainUIMidlet" LOC="42" classAccessLevel="public" isInterface="false" Superclass="MIDlet" DeclaredPackage="ubc.midp.mobilephoto.core.ui" NOC="14">
+          <SuperInterfaces />
+          <Compositions>
+            <Composition ObjectName="rootController" ClassName="BaseController" />
+            <Composition ObjectName="model" ClassName="AlbumData" />
+          </Compositions>
+          <Comments>
+            <Comment CommentText="Following are pre processor statements to include the required" />
+            <Comment CommentText="classes for device specific features They must be commented out" />
+            <Comment CommentText="if they aren t used otherwise it will throw exceptions trying to" />
+            <Comment CommentText="load classes that aren t available for a given platform" />
+            <Comment CommentText="author trevor This is the main Midlet class for the core J2ME application It contains all the basic functionality that should be executable in any standard J2ME device that supports MIDP 1 0 or higher Any additional J2ME features for this application that are dependent upon a particular device ie optional or proprietary library are de coupled from the core application so they can be conditionally included depending on the target platform This Application provides a basic Photo Album interface that allows a user to view images on their mobile device" />
+            <Comment CommentText="m v C Controller" />
+            <Comment CommentText="Model M v c" />
+            <Comment CommentText="Constructor" />
+            <Comment CommentText="do nothing" />
+            <Comment CommentText="Start the MIDlet by creating new model and controller classes and initialize them as necessary" />
+            <Comment CommentText="Only the first last controller needs to be initialized" />
+            <Comment CommentText="Pause the MIDlet This method does nothing at the moment" />
+            <Comment CommentText="do nothing" />
+            <Comment CommentText="Destroy the MIDlet" />
+          </Comments>
+          <Attributes>
+            <Attribute AttributeName="rootController" AttributeAccessLevel="private" AttributeType="BaseController" isStaticAttribute="false" />
+            <Attribute AttributeName="model" AttributeAccessLevel="private" AttributeType="AlbumData" isStaticAttribute="false" />
+          </Attributes>
+          <Methods>
+            <Method MethodName="MainUIMidlet" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="MainUIMidlet">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="startApp" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="MainUIMidlet">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="model=new AlbumData()" AccessedIn="startApp" />
+                <AttributeAccess AttributeAccessName="rootController" AttributeAccessType="" HowIsItUsed="rootController=new BaseController(this,model)" AccessedIn="startApp" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="init" Arguments="[model]" InvokedBy="startApp" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="model" RightHandSide="new AlbumData()" />
+                <Assignment LeftHandSide="rootController" RightHandSide="new BaseController(this,model)" />
+              </MethodAssignments>
+              <MethodExceptions>
+                <Exception ExceptionType="MIDletStateChangeException" />
+              </MethodExceptions>
+            </Method>
+            <Method MethodName="pauseApp" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="MainUIMidlet">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="destroyApp" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="MainUIMidlet">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="unconditional" ParameterType="boolean" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="notifyDestroyed" Arguments="[]" InvokedBy="destroyApp" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Package>
+    <Package PackageName="ubc.midp.mobilephoto.core.ui.controller">
+      <Classes>
+        <Class ClassName="BaseController" LOC="410" classAccessLevel="public" isInterface="false" DeclaredPackage="ubc.midp.mobilephoto.core.ui.controller" NOC="65">
+          <SuperInterfaces>
+            <Interface InterfaceName="CommandListener" />
+            <Interface InterfaceName="ControllerInterface" />
+          </SuperInterfaces>
+          <Compositions>
+            <Composition ObjectName="midlet" ClassName="MainUIMidlet" />
+            <Composition ObjectName="display" ClassName="Display" />
+            <Composition ObjectName="model" ClassName="AlbumData" />
+            <Composition ObjectName="nextController" ClassName="BaseController" />
+            <Composition ObjectName="albumListScreen" ClassName="AlbumListScreen" />
+          </Compositions>
+          <Comments>
+            <Comment CommentText="Created on Sep 28 2004" />
+            <Comment CommentText="author tyoung This is the base controller class used in the MVC architecture It controls the flow of screens for the MobilePhoto application Commands handled by this class should only be for the core application that runs on any MIDP platform Each device or class of devices that supports optional features will extend this class to handle feature specific commands" />
+            <Comment CommentText="Define a successor to implement the Chain of Responsibility design pattern" />
+            <Comment CommentText="Define the basic screens" />
+            <Comment CommentText="Keep track of the navigation so we can go back easily" />
+            <Comment CommentText="Keep track of the current photo album being viewed" />
+            <Comment CommentText="Ie name of the currently active J2ME record store" />
+            <Comment CommentText="Pass a handle to the main Midlet for this controller param midlet" />
+            <Comment CommentText="Pass a handle to the main Midlet for this controller param midlet" />
+            <Comment CommentText="Initialize the controller" />
+            <Comment CommentText="Don t think I need this here anymore" />
+            <Comment CommentText="this model model" />
+            <Comment CommentText="initialize all the screens" />
+            <Comment CommentText="Get all MobilePhoto defined albums from the record store" />
+            <Comment CommentText="Add album name to menu list" />
+            <Comment CommentText="Set the current screen to the photo album listing" />
+            <Comment CommentText="Can this controller handle the desired action" />
+            <Comment CommentText="If yes handleCommand will return true and we re done" />
+            <Comment CommentText="If no handleCommand will return false and postCommand" />
+            <Comment CommentText="will pass the request to the next controller in the chain if one exists" />
+            <Comment CommentText="Case Exit Application" />
+            <Comment CommentText="Case Reset PhotoAlbum data" />
+            <Comment CommentText="Case Delete Album Photo" />
+            <Comment CommentText="Case Yes delete Photo Album" />
+            <Comment CommentText="Case Save new Photo Album" />
+            <Comment CommentText="Case No delete Photo Album" />
+            <Comment CommentText="Case Save new Photo Album" />
+            <Comment CommentText="Case Select PhotoAlbum to view" />
+            <Comment CommentText="Get the name of the PhotoAlbum selected and load image list from RecordStore" />
+            <Comment CommentText="Case View Image" />
+            <Comment CommentText="Case Add photo" />
+            <Comment CommentText="Case Save Add photo" />
+            <Comment CommentText="Case Delete selected Photo from recordstore" />
+            <Comment CommentText="Case Go to the Previous or Fallback screen" />
+            <Comment CommentText="Case Cancel the current screen and go back one" />
+            <Comment CommentText="If we couldn t handle the current command return false" />
+            <Comment CommentText="If the current controller cannot handle the command pass it to the next" />
+            <Comment CommentText="controller in the chain" />
+            <Comment CommentText="Handle events For now this just passes control off to a wrapper so we can ensure in order to use it in the aspect advice" />
+            <Comment CommentText="This option is mainly for testing purposes If the record store on the device or emulator gets into an unstable state or has too many images you can reset it which clears the record stores and re creates them with the default images bundled with the application" />
+            <Comment CommentText="Clear the names from the album list" />
+            <Comment CommentText="Get the default ones from the album" />
+            <Comment CommentText="Add album name to menu list" />
+            <Comment CommentText="Set the current screen for display" />
+            <Comment CommentText="Set the current screen for display after alert" />
+            <Comment CommentText="display setCurrent a d" />
+            <Comment CommentText="Get the current screen name that is displayed" />
+            <Comment CommentText="return display getCurrent" />
+            <Comment CommentText="Go to the previous screen TODO Re implement Not working properly yet" />
+            <Comment CommentText="Go to the image list here not the main screen" />
+            <Comment CommentText="Show the current image that is selected" />
+            <Comment CommentText="First check if it is in the hashtable alrady" />
+            <Comment CommentText="If it s not in the table load it from the recordstore" />
+            <Comment CommentText="We can pass in the image directly here or just the name model pair and have it loaded" />
+            <Comment CommentText="Show the list of images in the record store TODO Refactor Move this to ImageList class" />
+            <Comment CommentText="Command selectCommand new Command Open Command ITEM 1" />
+            <Comment CommentText="loop through array and add labels to list" />
+            <Comment CommentText="Add album name to menu list" />
+            <Comment CommentText="currentMenu list" />
+            <Comment CommentText="Get the last selected image from the Photo List screen TODO This really only gets the selected List item So it is only an image name if you are on the PhotoList screen Need to fix this" />
+            <Comment CommentText="return Returns the model" />
+            <Comment CommentText="return Returns the currentStoreName" />
+            <Comment CommentText="param currentScreenName The currentScreenName to set" />
+            <Comment CommentText="return" />
+            <Comment CommentText="param nextController" />
+          </Comments>
+          <Attributes>
+            <Attribute AttributeName="midlet" AttributeAccessLevel="private" AttributeType="MainUIMidlet" isStaticAttribute="false" />
+            <Attribute AttributeName="display" AttributeAccessLevel="private" AttributeType="Display" isStaticAttribute="false" />
+            <Attribute AttributeName="model" AttributeAccessLevel="private" AttributeType="AlbumData" isStaticAttribute="false" />
+            <Attribute AttributeName="nextController" AttributeAccessLevel="private" AttributeType="BaseController" isStaticAttribute="false" />
+            <Attribute AttributeName="albumListScreen" AttributeAccessLevel="private" AttributeType="AlbumListScreen" isStaticAttribute="false" />
+            <Attribute AttributeName="currentScreenName" AttributeAccessLevel="private" AttributeType="String" isStaticAttribute="false" />
+            <Attribute AttributeName="currentStoreName" AttributeAccessLevel="private" AttributeType="String" isStaticAttribute="false" />
+          </Attributes>
+          <Methods>
+            <Method MethodName="BaseController" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="midlet" ParameterType="MainUIMidlet" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="midlet" AttributeAccessType="" HowIsItUsed="this.midlet" AccessedIn="BaseController" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="this.midlet" RightHandSide="midlet" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="BaseController" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="midlet" ParameterType="MainUIMidlet" />
+                <Parameter ParameterName="model" ParameterType="AlbumData" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="midlet" AttributeAccessType="" HowIsItUsed="this.midlet" AccessedIn="BaseController" />
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="this.model" AccessedIn="BaseController" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="this.midlet" RightHandSide="midlet" />
+                <Assignment LeftHandSide="this.model" RightHandSide="model" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="init" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="model" ParameterType="AlbumData" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="display" AttributeAccessType="" HowIsItUsed="this.display" AccessedIn="init" />
+                <AttributeAccess AttributeAccessName="midlet" AttributeAccessType="" HowIsItUsed="Display.getDisplay(midlet)" AccessedIn="init" />
+                <AttributeAccess AttributeAccessName="albumListScreen" AttributeAccessType="" HowIsItUsed="albumListScreen=new AlbumListScreen()" AccessedIn="init" />
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="model.getAlbumNames()" AccessedIn="init" />
+                <AttributeAccess AttributeAccessName="currentScreenName" AttributeAccessType="" HowIsItUsed="currentScreenName=Constants.ALBUMLIST_SCREEN" AccessedIn="init" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="getDisplay" Arguments="[midlet]" InvokedBy="init" />
+                <MethodInvocation MethodInvocationName="getAlbumNames" Arguments="[]" InvokedBy="init" />
+                <MethodInvocation MethodInvocationName="append" Arguments="[albumNames[i], null]" InvokedBy="init" />
+                <MethodInvocation MethodInvocationName="initMenu" Arguments="[]" InvokedBy="init" />
+                <MethodInvocation MethodInvocationName="setCommandListener" Arguments="[this]" InvokedBy="init" />
+                <MethodInvocation MethodInvocationName="setCurrentScreen" Arguments="[albumListScreen]" InvokedBy="init" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="this.display" RightHandSide="Display.getDisplay(midlet)" />
+                <Assignment LeftHandSide="albumListScreen" RightHandSide="new AlbumListScreen()" />
+                <Assignment LeftHandSide="currentScreenName" RightHandSide="Constants.ALBUMLIST_SCREEN" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="handleCommand" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="boolean" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="c" ParameterType="Command" />
+                <Parameter ParameterName="d" ParameterType="Displayable" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="midlet" AttributeAccessType="" HowIsItUsed="midlet.destroyApp(true)" AccessedIn="handleCommand" />
+                <AttributeAccess AttributeAccessName="currentScreenName" AttributeAccessType="" HowIsItUsed="currentScreenName=Constants.ALBUMLIST_SCREEN" AccessedIn="handleCommand" />
+                <AttributeAccess AttributeAccessName="display" AttributeAccessType="" HowIsItUsed="display.getCurrent()" AccessedIn="handleCommand" />
+                <AttributeAccess AttributeAccessName="currentStoreName" AttributeAccessType="" HowIsItUsed="currentStoreName=down.getString(down.getSelectedIndex())" AccessedIn="handleCommand" />
+                <AttributeAccess AttributeAccessName="albumListScreen" AttributeAccessType="" HowIsItUsed="setCurrentScreen(deleteConfAlert,albumListScreen)" AccessedIn="handleCommand" />
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="model.deletePhotoAlbum(currentStoreName)" AccessedIn="handleCommand" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="getLabel" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[this.getClass().getName() + &quot;::handleCommand: &quot; + label]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="getName" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="getClass" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[&quot;Exit&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="destroyApp" Arguments="[true]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[&quot;Reset&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="resetImageData" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[&quot;New Photo Album&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Create new Photo Album here&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="setCommandListener" Arguments="[this]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="setCurrentScreen" Arguments="[canv]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[&quot;Delete Album&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Delete Photo Album here&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="getCurrent" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="getString" Arguments="[down.getSelectedIndex()]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="getSelectedIndex" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="setTimeout" Arguments="[Alert.FOREVER]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[new Command(&quot;Yes - Delete&quot;,Command.OK,2)]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[new Command(&quot;No - Delete&quot;,Command.CANCEL,2)]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="setCurrentScreen" Arguments="[deleteConfAlert, albumListScreen]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="setCommandListener" Arguments="[this]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[&quot;Yes - Delete&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="deletePhotoAlbum" Arguments="[currentStoreName]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="goToPreviousScreen" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[&quot;No - Delete&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="goToPreviousScreen" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[&quot;Save&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="createNewPhotoAlbum" Arguments="[((NewAlbumScreen)getCurrentScreenName()).getAlbumName()]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="getAlbumName" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="getCurrentScreenName" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="goToPreviousScreen" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[&quot;Select&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="getCurrent" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="getString" Arguments="[down.getSelectedIndex()]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="getSelectedIndex" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="showImageList" Arguments="[currentStoreName]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[&quot;View&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="showImage" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[&quot;Add&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="setCommandListener" Arguments="[this]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="setCurrentScreen" Arguments="[form]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[&quot;Save Add Photo&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="addNewPhotoToAlbum" Arguments="[((AddPhotoToAlbum)getCurrentScreenName()).getPhotoName(), ((AddPhotoToAlbum)getCurrentScreenName()).getPath(), currentStoreName]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="getPhotoName" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="getCurrentScreenName" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="getPath" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="getCurrentScreenName" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="goToPreviousScreen" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[&quot;Delete&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="getSelectedImageName" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="deleteImage" Arguments="[currentStoreName, selectedImageName]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="showImageList" Arguments="[currentStoreName]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[&quot;Back&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="goToPreviousScreen" Arguments="[]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[&quot;Cancel&quot;]" InvokedBy="handleCommand" />
+                <MethodInvocation MethodInvocationName="goToPreviousScreen" Arguments="[]" InvokedBy="handleCommand" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="currentScreenName" RightHandSide="Constants.ALBUMLIST_SCREEN" />
+                <Assignment LeftHandSide="currentScreenName" RightHandSide="Constants.NEWALBUM_SCREEN" />
+                <Assignment LeftHandSide="canv" RightHandSide="null" />
+                <Assignment LeftHandSide="currentScreenName" RightHandSide="Constants.CONFIRMDELETEALBUM_SCREEN" />
+                <Assignment LeftHandSide="currentStoreName" RightHandSide="down.getString(down.getSelectedIndex())" />
+                <Assignment LeftHandSide="currentStoreName" RightHandSide="down.getString(down.getSelectedIndex())" />
+                <Assignment LeftHandSide="currentScreenName" RightHandSide="Constants.IMAGELIST_SCREEN" />
+                <Assignment LeftHandSide="currentScreenName" RightHandSide="Constants.IMAGE_SCREEN" />
+                <Assignment LeftHandSide="currentScreenName" RightHandSide="Constants.ADDPHOTOTOALBUM_SCREEN" />
+                <Assignment LeftHandSide="currentScreenName" RightHandSide="Constants.IMAGELIST_SCREEN" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="postCommand" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="c" ParameterType="Command" />
+                <Parameter ParameterName="d" ParameterType="Displayable" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;BaseController::postCommand - Current controller is: &quot; + this.getClass().getName()]" InvokedBy="postCommand" />
+                <MethodInvocation MethodInvocationName="getName" Arguments="[]" InvokedBy="postCommand" />
+                <MethodInvocation MethodInvocationName="getClass" Arguments="[]" InvokedBy="postCommand" />
+                <MethodInvocation MethodInvocationName="handleCommand" Arguments="[c, d]" InvokedBy="postCommand" />
+                <MethodInvocation MethodInvocationName="getNextController" Arguments="[]" InvokedBy="postCommand" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Passing to next controller in chain: &quot; + next.getClass().getName()]" InvokedBy="postCommand" />
+                <MethodInvocation MethodInvocationName="getName" Arguments="[]" InvokedBy="postCommand" />
+                <MethodInvocation MethodInvocationName="getClass" Arguments="[]" InvokedBy="postCommand" />
+                <MethodInvocation MethodInvocationName="postCommand" Arguments="[c, d]" InvokedBy="postCommand" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;BaseController::postCommand - Reached top of chain. No more handlers for command: &quot; + c.getLabel()]" InvokedBy="postCommand" />
+                <MethodInvocation MethodInvocationName="getLabel" Arguments="[]" InvokedBy="postCommand" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="commandAction" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="c" ParameterType="Command" />
+                <Parameter ParameterName="d" ParameterType="Displayable" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="postCommand" Arguments="[c, d]" InvokedBy="commandAction" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="resetImageData" MethodAccessLevel="private" isStaticMethod="false" MethodReturnType="void" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="model.resetImageData()" AccessedIn="resetImageData" />
+                <AttributeAccess AttributeAccessName="albumListScreen" AttributeAccessType="" HowIsItUsed="albumListScreen.size()" AccessedIn="resetImageData" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="resetImageData" Arguments="[]" InvokedBy="resetImageData" />
+                <MethodInvocation MethodInvocationName="size" Arguments="[]" InvokedBy="resetImageData" />
+                <MethodInvocation MethodInvocationName="delete" Arguments="[i]" InvokedBy="resetImageData" />
+                <MethodInvocation MethodInvocationName="getAlbumNames" Arguments="[]" InvokedBy="resetImageData" />
+                <MethodInvocation MethodInvocationName="append" Arguments="[albumNames[i], null]" InvokedBy="resetImageData" />
+                <MethodInvocation MethodInvocationName="setCurrentScreen" Arguments="[albumListScreen]" InvokedBy="resetImageData" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setCurrentScreen" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="d" ParameterType="Displayable" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="midlet" AttributeAccessType="" HowIsItUsed="Display.getDisplay(midlet)" AccessedIn="setCurrentScreen" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="setCurrent" Arguments="[d]" InvokedBy="setCurrentScreen" />
+                <MethodInvocation MethodInvocationName="getDisplay" Arguments="[midlet]" InvokedBy="setCurrentScreen" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setCurrentScreen" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="a" ParameterType="Alert" />
+                <Parameter ParameterName="d" ParameterType="Displayable" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="midlet" AttributeAccessType="" HowIsItUsed="Display.getDisplay(midlet)" AccessedIn="setCurrentScreen" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="setCurrent" Arguments="[a, d]" InvokedBy="setCurrentScreen" />
+                <MethodInvocation MethodInvocationName="getDisplay" Arguments="[midlet]" InvokedBy="setCurrentScreen" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getCurrentScreenName" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="Displayable" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="midlet" AttributeAccessType="" HowIsItUsed="Display.getDisplay(midlet)" AccessedIn="getCurrentScreenName" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="getCurrent" Arguments="[]" InvokedBy="getCurrentScreenName" />
+                <MethodInvocation MethodInvocationName="getDisplay" Arguments="[midlet]" InvokedBy="getCurrentScreenName" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="goToPreviousScreen" MethodAccessLevel="private" isStaticMethod="false" MethodReturnType="void" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="currentScreenName" AttributeAccessType="" HowIsItUsed="currentScreenName.equals(Constants.ALBUMLIST_SCREEN)" AccessedIn="goToPreviousScreen" />
+                <AttributeAccess AttributeAccessName="currentStoreName" AttributeAccessType="" HowIsItUsed="showImageList(currentStoreName)" AccessedIn="goToPreviousScreen" />
+                <AttributeAccess AttributeAccessName="albumListScreen" AttributeAccessType="" HowIsItUsed="setCurrentScreen(albumListScreen)" AccessedIn="goToPreviousScreen" />
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="model.getAlbumNames()" AccessedIn="goToPreviousScreen" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="equals" Arguments="[Constants.ALBUMLIST_SCREEN]" InvokedBy="goToPreviousScreen" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Can't go back here...Should never reach this spot&quot;]" InvokedBy="goToPreviousScreen" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[Constants.IMAGE_SCREEN]" InvokedBy="goToPreviousScreen" />
+                <MethodInvocation MethodInvocationName="showImageList" Arguments="[currentStoreName]" InvokedBy="goToPreviousScreen" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[Constants.IMAGELIST_SCREEN]" InvokedBy="goToPreviousScreen" />
+                <MethodInvocation MethodInvocationName="setCurrentScreen" Arguments="[albumListScreen]" InvokedBy="goToPreviousScreen" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[Constants.NEWALBUM_SCREEN]" InvokedBy="goToPreviousScreen" />
+                <MethodInvocation MethodInvocationName="repaintListAlbum" Arguments="[model.getAlbumNames()]" InvokedBy="goToPreviousScreen" />
+                <MethodInvocation MethodInvocationName="getAlbumNames" Arguments="[]" InvokedBy="goToPreviousScreen" />
+                <MethodInvocation MethodInvocationName="setCurrentScreen" Arguments="[albumListScreen]" InvokedBy="goToPreviousScreen" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[Constants.CONFIRMDELETEALBUM_SCREEN]" InvokedBy="goToPreviousScreen" />
+                <MethodInvocation MethodInvocationName="repaintListAlbum" Arguments="[model.getAlbumNames()]" InvokedBy="goToPreviousScreen" />
+                <MethodInvocation MethodInvocationName="getAlbumNames" Arguments="[]" InvokedBy="goToPreviousScreen" />
+                <MethodInvocation MethodInvocationName="setCurrentScreen" Arguments="[albumListScreen]" InvokedBy="goToPreviousScreen" />
+                <MethodInvocation MethodInvocationName="equals" Arguments="[Constants.ADDPHOTOTOALBUM_SCREEN]" InvokedBy="goToPreviousScreen" />
+                <MethodInvocation MethodInvocationName="showImageList" Arguments="[currentStoreName]" InvokedBy="goToPreviousScreen" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="currentScreenName" RightHandSide="Constants.IMAGELIST_SCREEN" />
+                <Assignment LeftHandSide="currentScreenName" RightHandSide="Constants.ALBUMLIST_SCREEN" />
+                <Assignment LeftHandSide="currentScreenName" RightHandSide="Constants.ALBUMLIST_SCREEN" />
+                <Assignment LeftHandSide="currentScreenName" RightHandSide="Constants.ALBUMLIST_SCREEN" />
+                <Assignment LeftHandSide="currentScreenName" RightHandSide="Constants.IMAGELIST_SCREEN" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="showImage" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="display" AttributeAccessType="" HowIsItUsed="display.getCurrent()" AccessedIn="showImage" />
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="model.getImageFromRecordStore(currentStoreName,name)" AccessedIn="showImage" />
+                <AttributeAccess AttributeAccessName="currentStoreName" AttributeAccessType="" HowIsItUsed="model.getImageFromRecordStore(currentStoreName,name)" AccessedIn="showImage" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="getCurrent" Arguments="[]" InvokedBy="showImage" />
+                <MethodInvocation MethodInvocationName="getString" Arguments="[selected.getSelectedIndex()]" InvokedBy="showImage" />
+                <MethodInvocation MethodInvocationName="getSelectedIndex" Arguments="[]" InvokedBy="showImage" />
+                <MethodInvocation MethodInvocationName="getImageFromRecordStore" Arguments="[currentStoreName, name]" InvokedBy="showImage" />
+                <MethodInvocation MethodInvocationName="getImageFromRecordStore" Arguments="[currentStoreName, name]" InvokedBy="showImage" />
+                <MethodInvocation MethodInvocationName="setCommandListener" Arguments="[this]" InvokedBy="showImage" />
+                <MethodInvocation MethodInvocationName="setCurrentScreen" Arguments="[canv]" InvokedBy="showImage" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="storedImage" RightHandSide="model.getImageFromRecordStore(currentStoreName,name)" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="showImageList" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="recordName" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="currentStoreName" AttributeAccessType="" HowIsItUsed="recordName=currentStoreName" AccessedIn="showImageList" />
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="model.getImageNames(recordName)" AccessedIn="showImageList" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="initMenu" Arguments="[]" InvokedBy="showImageList" />
+                <MethodInvocation MethodInvocationName="setCommandListener" Arguments="[this]" InvokedBy="showImageList" />
+                <MethodInvocation MethodInvocationName="getImageNames" Arguments="[recordName]" InvokedBy="showImageList" />
+                <MethodInvocation MethodInvocationName="append" Arguments="[labels[i], null]" InvokedBy="showImageList" />
+                <MethodInvocation MethodInvocationName="setCurrentScreen" Arguments="[imageList]" InvokedBy="showImageList" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="recordName" RightHandSide="currentStoreName" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getSelectedImageName" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="String" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="display" AttributeAccessType="" HowIsItUsed="display == null" AccessedIn="getSelectedImageName" />
+                <AttributeAccess AttributeAccessName="midlet" AttributeAccessType="" HowIsItUsed="Display.getDisplay(midlet)" AccessedIn="getSelectedImageName" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;BaseController::getSelectedImageName: Current display is NULL! Trying to get from Midlet&quot;]" InvokedBy="getSelectedImageName" />
+                <MethodInvocation MethodInvocationName="getDisplay" Arguments="[midlet]" InvokedBy="getSelectedImageName" />
+                <MethodInvocation MethodInvocationName="getCurrent" Arguments="[]" InvokedBy="getSelectedImageName" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Current List from display is NULL!&quot;]" InvokedBy="getSelectedImageName" />
+                <MethodInvocation MethodInvocationName="getString" Arguments="[selected.getSelectedIndex()]" InvokedBy="getSelectedImageName" />
+                <MethodInvocation MethodInvocationName="getSelectedIndex" Arguments="[]" InvokedBy="getSelectedImageName" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="display" RightHandSide="Display.getDisplay(midlet)" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getModel" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="AlbumData" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="return model;&#xA;" AccessedIn="getModel" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getCurrentStoreName" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="String" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="currentStoreName" AttributeAccessType="" HowIsItUsed="return currentStoreName;&#xA;" AccessedIn="getCurrentStoreName" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setCurrentScreenName" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="currentScreenName" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="currentScreenName" AttributeAccessType="" HowIsItUsed="this.currentScreenName" AccessedIn="setCurrentScreenName" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="this.currentScreenName" RightHandSide="currentScreenName" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getNextController" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="BaseController" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="nextController" AttributeAccessType="" HowIsItUsed="return nextController;&#xA;" AccessedIn="getNextController" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setNextController" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="BaseController">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="nextController" ParameterType="BaseController" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="nextController" AttributeAccessType="" HowIsItUsed="this.nextController" AccessedIn="setNextController" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="this.nextController" RightHandSide="nextController" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+        <Class ClassName="ControllerInterface" LOC="18" classAccessLevel="public" isInterface="true" DeclaredPackage="ubc.midp.mobilephoto.core.ui.controller" NOC="2">
+          <SuperInterfaces />
+          <Compositions />
+          <Comments>
+            <Comment CommentText="Created on May 2 2005 ControllerInterface java Created with Eclipse v3 0 by tyoung" />
+            <Comment CommentText="author tyoung This interface must be implemented by all sub Controllers used by MobilePhoto It is for the Chain of Responsibility design pattern and defined two methods The entry point to handle a command using the implementing controller is the postCommand method postCommand calls handleCommand which will return True if the current controller has handled the command handleCommand will return false otherwise If handleCommand returns false then postCommand will attempt to call the next controller in the chain if one exists" />
+          </Comments>
+          <Attributes />
+          <Methods>
+            <Method MethodName="postCommand" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="ControllerInterface">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="c" ParameterType="Command" />
+                <Parameter ParameterName="d" ParameterType="Displayable" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="handleCommand" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="boolean" DeclaredClass="ControllerInterface">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="c" ParameterType="Command" />
+                <Parameter ParameterName="d" ParameterType="Displayable" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Package>
+    <Package PackageName="ubc.midp.mobilephoto.core.ui.datamodel">
+      <Classes>
+        <Class ClassName="ImageAccessor" LOC="368" classAccessLevel="public" isInterface="false" DeclaredPackage="ubc.midp.mobilephoto.core.ui.datamodel" NOC="55">
+          <SuperInterfaces />
+          <Compositions>
+            <Composition ObjectName="albumNames" ClassName="String" />
+            <Composition ObjectName="model" ClassName="AlbumData" />
+            <Composition ObjectName="imageRS" ClassName="RecordStore" />
+            <Composition ObjectName="imageInfoRS" ClassName="RecordStore" />
+          </Compositions>
+          <Comments>
+            <Comment CommentText="Created on Sep 13 2004" />
+            <Comment CommentText="author trevor This is the main data access class It handles all the connectivity with the RMS record stores to fetch and save data associated with MobilePhoto TODO Refactor into stable interface for future updates We may want to access data from RMS or eventually direct from the file system on devices that support the FileConnection optional API" />
+            <Comment CommentText="Note Our midlet only ever has access to Record Stores it created" />
+            <Comment CommentText="For now use naming convention to create record stores used by MobilePhoto" />
+            <Comment CommentText="mpa all album names are prefixed with this label" />
+            <Comment CommentText="mpi all album info stores are prefixed with this label" />
+            <Comment CommentText="default album name" />
+            <Comment CommentText="RecordStore name prefixed" />
+            <Comment CommentText="User defined names of photo albums" />
+            <Comment CommentText="Record Stores" />
+            <Comment CommentText="Constructor" />
+            <Comment CommentText="Load all existing photo albums that are defined in the record store" />
+            <Comment CommentText="Try to find any existing Albums record stores" />
+            <Comment CommentText="Only use record stores that follow the naming convention defined" />
+            <Comment CommentText="If this record store is a photo album" />
+            <Comment CommentText="Strip out the mpa identifier" />
+            <Comment CommentText="Add the album name to the array" />
+            <Comment CommentText="Re copy the contents into a smaller array now that we know the size" />
+            <Comment CommentText="Reset the album data for MobilePhoto This will delete all existing photo data from the record store and re create the default album and photos" />
+            <Comment CommentText="remove any existing album stores" />
+            <Comment CommentText="Delete all existing stores containing Image objects as well as the associated ImageInfo objects" />
+            <Comment CommentText="Add the prefixes labels to the info store" />
+            <Comment CommentText="ignore any errors" />
+            <Comment CommentText="Do nothing for now" />
+            <Comment CommentText="Now create a new default album for testing" />
+            <Comment CommentText="Add Penguin" />
+            <Comment CommentText="Add Duke" />
+            <Comment CommentText="Add Gail" />
+            <Comment CommentText="Add JG" />
+            <Comment CommentText="Add GK" />
+            <Comment CommentText="Add KDV" />
+            <Comment CommentText="new record ID for Image bytes" />
+            <Comment CommentText="new record ID for ImageData metadata" />
+            <Comment CommentText="NOTE For some Siemen s phone all images have to be less than 16K" />
+            <Comment CommentText="May have to check for this or try to convert to a lesser format" />
+            <Comment CommentText="for display on Siemen s phones Could put this in an Aspect" />
+            <Comment CommentText="Add Tucan" />
+            <Comment CommentText="This will populate the imageInfo hashtable with the ImageInfo object referenced by label name and populate the imageTable hashtable with Image objects referenced by the RMS record Id" />
+            <Comment CommentText="Get next record" />
+            <Comment CommentText="Convert the data from a byte array into our ImageData metadata object" />
+            <Comment CommentText="Add the info to the metadata hashtable" />
+            <Comment CommentText="Re copy the contents into a smaller array" />
+            <Comment CommentText="Update the Image metadata associated with this named photo" />
+            <Comment CommentText="Parse the Data store name to get the Info store name" />
+            <Comment CommentText="Update the Hashtable cache" />
+            <Comment CommentText="Retrieve the metadata associated with a specified image by name" />
+            <Comment CommentText="Update the hashtable with new ImageInfo data" />
+            <Comment CommentText="Fetch a single image from the Record Store This should be used for loading images on demand only when they are viewed or sent via SMS etc to reduce startup time by loading them all at once" />
+            <Comment CommentText="Get the data for an Image as a byte array This is useful for sending images via SMS or HTTP" />
+            <Comment CommentText="Delete a single specified image from the specified record store This will permanently delete the image data and metadata from the device" />
+            <Comment CommentText="Open the record stores containing the byte data and the meta data info" />
+            <Comment CommentText="Verify storeName is name without pre fix" />
+            <Comment CommentText="TODO It s not clear from the API whether the record store needs to be closed or not" />
+            <Comment CommentText="Define a new photo album for mobile photo users This creates a new record store to store photos for the album" />
+            <Comment CommentText="Get the list of photo album names currently loaded return Returns the albumNames" />
+          </Comments>
+          <Attributes>
+            <Attribute AttributeName="ALBUM_LABEL" AttributeAccessLevel="public" AttributeType="String" isStaticAttribute="true" />
+            <Attribute AttributeName="INFO_LABEL" AttributeAccessLevel="public" AttributeType="String" isStaticAttribute="true" />
+            <Attribute AttributeName="DEFAULT_ALBUM_NAME" AttributeAccessLevel="public" AttributeType="String" isStaticAttribute="true" />
+            <Attribute AttributeName="IMAGE_LABEL" AttributeAccessLevel="public" AttributeType="String" isStaticAttribute="true" />
+            <Attribute AttributeName="albumNames" AttributeAccessLevel="protected" AttributeType="String[]" isStaticAttribute="false" />
+            <Attribute AttributeName="model" AttributeAccessLevel="protected" AttributeType="AlbumData" isStaticAttribute="false" />
+            <Attribute AttributeName="imageRS" AttributeAccessLevel="private" AttributeType="RecordStore" isStaticAttribute="false" />
+            <Attribute AttributeName="imageInfoRS" AttributeAccessLevel="private" AttributeType="RecordStore" isStaticAttribute="false" />
+          </Attributes>
+          <Methods>
+            <Method MethodName="ImageAccessor" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="ImageAccessor">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="mod" ParameterType="AlbumData" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="model=mod" AccessedIn="ImageAccessor" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="model" RightHandSide="mod" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="loadAlbums" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="ImageAccessor">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="model.existingRecords" AccessedIn="loadAlbums" />
+                <AttributeAccess AttributeAccessName="ALBUM_LABEL" AttributeAccessType="" HowIsItUsed="curr.startsWith(ALBUM_LABEL)" AccessedIn="loadAlbums" />
+                <AttributeAccess AttributeAccessName="albumNames" AttributeAccessType="" HowIsItUsed="albumNames=new String[count]" AccessedIn="loadAlbums" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="listRecordStores" Arguments="[]" InvokedBy="loadAlbums" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;ImageAccessor::loadAlbums: Found: &quot; + currentStores.length + &quot; existing record stores&quot;]" InvokedBy="loadAlbums" />
+                <MethodInvocation MethodInvocationName="startsWith" Arguments="[ALBUM_LABEL]" InvokedBy="loadAlbums" />
+                <MethodInvocation MethodInvocationName="substring" Arguments="[4]" InvokedBy="loadAlbums" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;ImageAccessor::loadAlbums: 0 record stores exist. Creating default one.&quot;]" InvokedBy="loadAlbums" />
+                <MethodInvocation MethodInvocationName="resetImageRecordStore" Arguments="[]" InvokedBy="loadAlbums" />
+                <MethodInvocation MethodInvocationName="loadAlbums" Arguments="[]" InvokedBy="loadAlbums" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="model.existingRecords" RightHandSide="true" />
+                <Assignment LeftHandSide="curr" RightHandSide="curr.substring(4)" />
+                <Assignment LeftHandSide="temp[i]" RightHandSide="curr" />
+                <Assignment LeftHandSide="albumNames" RightHandSide="new String[count]" />
+                <Assignment LeftHandSide="albumNames[count2]" RightHandSide="temp[i]" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="resetImageRecordStore" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="ImageAccessor">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="albumNames" AttributeAccessType="" HowIsItUsed="albumNames != null" AccessedIn="resetImageRecordStore" />
+                <AttributeAccess AttributeAccessName="ALBUM_LABEL" AttributeAccessType="" HowIsItUsed="ALBUM_LABEL + albumNames[i]" AccessedIn="resetImageRecordStore" />
+                <AttributeAccess AttributeAccessName="INFO_LABEL" AttributeAccessType="" HowIsItUsed="INFO_LABEL + albumNames[i]" AccessedIn="resetImageRecordStore" />
+                <AttributeAccess AttributeAccessName="DEFAULT_ALBUM_NAME" AttributeAccessType="" HowIsItUsed="ImageAccessor.DEFAULT_ALBUM_NAME" AccessedIn="resetImageRecordStore" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="deleteRecordStore" Arguments="[storeName]" InvokedBy="resetImageRecordStore" />
+                <MethodInvocation MethodInvocationName="deleteRecordStore" Arguments="[infoStoreName]" InvokedBy="resetImageRecordStore" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;No record store named &quot; + storeName + &quot; to delete.&quot;]" InvokedBy="resetImageRecordStore" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;...or...No record store named &quot; + infoStoreName + &quot; to delete.&quot;]" InvokedBy="resetImageRecordStore" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Ignoring Exception: &quot; + e]" InvokedBy="resetImageRecordStore" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;ImageAccessor::resetImageRecordStore: albumNames array was null. Nothing to delete.&quot;]" InvokedBy="resetImageRecordStore" />
+                <MethodInvocation MethodInvocationName="addImageData" Arguments="[&quot;Tucan Sam&quot;, &quot;/images/Tucan.png&quot;, ImageAccessor.DEFAULT_ALBUM_NAME]" InvokedBy="resetImageRecordStore" />
+                <MethodInvocation MethodInvocationName="addImageData" Arguments="[&quot;Linux Penguin&quot;, &quot;/images/Penguin.png&quot;, ImageAccessor.DEFAULT_ALBUM_NAME]" InvokedBy="resetImageRecordStore" />
+                <MethodInvocation MethodInvocationName="addImageData" Arguments="[&quot;Duke (Sun)&quot;, &quot;/images/Duke1.PNG&quot;, ImageAccessor.DEFAULT_ALBUM_NAME]" InvokedBy="resetImageRecordStore" />
+                <MethodInvocation MethodInvocationName="addImageData" Arguments="[&quot;UBC Logo&quot;, &quot;/images/ubcLogo.PNG&quot;, ImageAccessor.DEFAULT_ALBUM_NAME]" InvokedBy="resetImageRecordStore" />
+                <MethodInvocation MethodInvocationName="addImageData" Arguments="[&quot;Gail&quot;, &quot;/images/Gail1.PNG&quot;, ImageAccessor.DEFAULT_ALBUM_NAME]" InvokedBy="resetImageRecordStore" />
+                <MethodInvocation MethodInvocationName="addImageData" Arguments="[&quot;J. Gosling&quot;, &quot;/images/Gosling1.PNG&quot;, ImageAccessor.DEFAULT_ALBUM_NAME]" InvokedBy="resetImageRecordStore" />
+                <MethodInvocation MethodInvocationName="addImageData" Arguments="[&quot;Gregor&quot;, &quot;/images/Gregor1.PNG&quot;, ImageAccessor.DEFAULT_ALBUM_NAME]" InvokedBy="resetImageRecordStore" />
+                <MethodInvocation MethodInvocationName="addImageData" Arguments="[&quot;Kris&quot;, &quot;/images/Kdvolder1.PNG&quot;, ImageAccessor.DEFAULT_ALBUM_NAME]" InvokedBy="resetImageRecordStore" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="storeName" RightHandSide="ALBUM_LABEL + albumNames[i]" />
+                <Assignment LeftHandSide="infoStoreName" RightHandSide="INFO_LABEL + albumNames[i]" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="addImageData" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="ImageAccessor">
+              <Parameters NumberOfParameters="3">
+                <Parameter ParameterName="photoname" ParameterType="String" />
+                <Parameter ParameterName="path" ParameterType="String" />
+                <Parameter ParameterName="albumname" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageRS" AttributeAccessType="" HowIsItUsed="imageRS=RecordStore.openRecordStore(ALBUM_LABEL + albumname,true)" AccessedIn="addImageData" />
+                <AttributeAccess AttributeAccessName="ALBUM_LABEL" AttributeAccessType="" HowIsItUsed="ALBUM_LABEL + albumname" AccessedIn="addImageData" />
+                <AttributeAccess AttributeAccessName="imageInfoRS" AttributeAccessType="" HowIsItUsed="imageInfoRS=RecordStore.openRecordStore(INFO_LABEL + albumname,true)" AccessedIn="addImageData" />
+                <AttributeAccess AttributeAccessName="INFO_LABEL" AttributeAccessType="" HowIsItUsed="INFO_LABEL + albumname" AccessedIn="addImageData" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="openRecordStore" Arguments="[ALBUM_LABEL + albumname, true]" InvokedBy="addImageData" />
+                <MethodInvocation MethodInvocationName="openRecordStore" Arguments="[INFO_LABEL + albumname, true]" InvokedBy="addImageData" />
+                <MethodInvocation MethodInvocationName="readImageAsByteArray" Arguments="[path]" InvokedBy="addImageData" />
+                <MethodInvocation MethodInvocationName="addRecord" Arguments="[data1, 0, data1.length]" InvokedBy="addImageData" />
+                <MethodInvocation MethodInvocationName="getNextRecordID" Arguments="[]" InvokedBy="addImageData" />
+                <MethodInvocation MethodInvocationName="setRecordId" Arguments="[rid2]" InvokedBy="addImageData" />
+                <MethodInvocation MethodInvocationName="getBytesFromImageInfo" Arguments="[ii]" InvokedBy="addImageData" />
+                <MethodInvocation MethodInvocationName="addRecord" Arguments="[data1, 0, data1.length]" InvokedBy="addImageData" />
+                <MethodInvocation MethodInvocationName="closeRecordStore" Arguments="[]" InvokedBy="addImageData" />
+                <MethodInvocation MethodInvocationName="closeRecordStore" Arguments="[]" InvokedBy="addImageData" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;AddPhoto to album :&quot;]" InvokedBy="addImageData" />
+                <MethodInvocation MethodInvocationName="printStackTrace" Arguments="[]" InvokedBy="addImageData" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="imageRS" RightHandSide="RecordStore.openRecordStore(ALBUM_LABEL + albumname,true)" />
+                <Assignment LeftHandSide="imageInfoRS" RightHandSide="RecordStore.openRecordStore(INFO_LABEL + albumname,true)" />
+                <Assignment LeftHandSide="rid" RightHandSide="imageRS.addRecord(data1,0,data1.length)" />
+                <Assignment LeftHandSide="rid2" RightHandSide="imageInfoRS.getNextRecordID()" />
+                <Assignment LeftHandSide="data1" RightHandSide="converter.getBytesFromImageInfo(ii)" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="loadImageDataFromRMS" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="String[]" DeclaredClass="ImageAccessor">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="recordName" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="INFO_LABEL" AttributeAccessType="" HowIsItUsed="ImageAccessor.INFO_LABEL" AccessedIn="loadImageDataFromRMS" />
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="model.getImageInfoTable()" AccessedIn="loadImageDataFromRMS" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="openRecordStore" Arguments="[infoStoreName, false]" InvokedBy="loadImageDataFromRMS" />
+                <MethodInvocation MethodInvocationName="enumerateRecords" Arguments="[null, null, false]" InvokedBy="loadImageDataFromRMS" />
+                <MethodInvocation MethodInvocationName="hasNextElement" Arguments="[]" InvokedBy="loadImageDataFromRMS" />
+                <MethodInvocation MethodInvocationName="nextRecordId" Arguments="[]" InvokedBy="loadImageDataFromRMS" />
+                <MethodInvocation MethodInvocationName="getRecord" Arguments="[currentId]" InvokedBy="loadImageDataFromRMS" />
+                <MethodInvocation MethodInvocationName="getImageInfoFromBytes" Arguments="[data]" InvokedBy="loadImageDataFromRMS" />
+                <MethodInvocation MethodInvocationName="getImageLabel" Arguments="[]" InvokedBy="loadImageDataFromRMS" />
+                <MethodInvocation MethodInvocationName="addElement" Arguments="[label]" InvokedBy="loadImageDataFromRMS" />
+                <MethodInvocation MethodInvocationName="put" Arguments="[label, iiObject]" InvokedBy="loadImageDataFromRMS" />
+                <MethodInvocation MethodInvocationName="getImageInfoTable" Arguments="[]" InvokedBy="loadImageDataFromRMS" />
+                <MethodInvocation MethodInvocationName="closeRecordStore" Arguments="[]" InvokedBy="loadImageDataFromRMS" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Caught Exception: &quot; + rse]" InvokedBy="loadImageDataFromRMS" />
+                <MethodInvocation MethodInvocationName="size" Arguments="[]" InvokedBy="loadImageDataFromRMS" />
+                <MethodInvocation MethodInvocationName="copyInto" Arguments="[labelArray]" InvokedBy="loadImageDataFromRMS" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="updateImageInfo" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="boolean" DeclaredClass="ImageAccessor">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="oldData" ParameterType="ImageData" />
+                <Parameter ParameterName="newData" ParameterType="ImageData" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="INFO_LABEL" AttributeAccessType="" HowIsItUsed="ImageAccessor.INFO_LABEL" AccessedIn="updateImageInfo" />
+                <AttributeAccess AttributeAccessName="ALBUM_LABEL" AttributeAccessType="" HowIsItUsed="ImageAccessor.ALBUM_LABEL" AccessedIn="updateImageInfo" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="getParentAlbumName" Arguments="[]" InvokedBy="updateImageInfo" />
+                <MethodInvocation MethodInvocationName="substring" Arguments="[ImageAccessor.ALBUM_LABEL.length()]" InvokedBy="updateImageInfo" />
+                <MethodInvocation MethodInvocationName="length" Arguments="[]" InvokedBy="updateImageInfo" />
+                <MethodInvocation MethodInvocationName="openRecordStore" Arguments="[infoStoreName, false]" InvokedBy="updateImageInfo" />
+                <MethodInvocation MethodInvocationName="getBytesFromImageInfo" Arguments="[newData]" InvokedBy="updateImageInfo" />
+                <MethodInvocation MethodInvocationName="setRecord" Arguments="[oldData.getRecordId(), imageDataBytes, 0, imageDataBytes.length]" InvokedBy="updateImageInfo" />
+                <MethodInvocation MethodInvocationName="getRecordId" Arguments="[]" InvokedBy="updateImageInfo" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Caught Exception: &quot; + rse]" InvokedBy="updateImageInfo" />
+                <MethodInvocation MethodInvocationName="setImageInfo" Arguments="[oldData.getImageLabel(), newData]" InvokedBy="updateImageInfo" />
+                <MethodInvocation MethodInvocationName="getImageLabel" Arguments="[]" InvokedBy="updateImageInfo" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="infoStoreName" RightHandSide="ImageAccessor.INFO_LABEL + infoStoreName.substring(ImageAccessor.ALBUM_LABEL.length())" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getImageInfo" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="ImageData" DeclaredClass="ImageAccessor">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="imageName" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="model == null" AccessedIn="getImageInfo" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;ImageAccessor - model was NULL!&quot;]" InvokedBy="getImageInfo" />
+                <MethodInvocation MethodInvocationName="get" Arguments="[imageName]" InvokedBy="getImageInfo" />
+                <MethodInvocation MethodInvocationName="getImageInfoTable" Arguments="[]" InvokedBy="getImageInfo" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;ImageAccessor::getImageInfo(): ImageInfo was NULL for &quot; + imageName + &quot; in ImageAccessor Hashtable.&quot;]" InvokedBy="getImageInfo" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setImageInfo" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="ImageAccessor">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="imageName" ParameterType="String" />
+                <Parameter ParameterName="newData" ParameterType="ImageData" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="model.getImageInfoTable()" AccessedIn="setImageInfo" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="put" Arguments="[newData.getImageLabel(), newData]" InvokedBy="setImageInfo" />
+                <MethodInvocation MethodInvocationName="getImageInfoTable" Arguments="[]" InvokedBy="setImageInfo" />
+                <MethodInvocation MethodInvocationName="getImageLabel" Arguments="[]" InvokedBy="setImageInfo" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="loadSingleImageFromRMS" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="Image" DeclaredClass="ImageAccessor">
+              <Parameters NumberOfParameters="3">
+                <Parameter ParameterName="recordName" ParameterType="String" />
+                <Parameter ParameterName="imageName" ParameterType="String" />
+                <Parameter ParameterName="recordId" ParameterType="int" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="loadImageBytesFromRMS" Arguments="[recordName, imageName, recordId]" InvokedBy="loadSingleImageFromRMS" />
+                <MethodInvocation MethodInvocationName="createImage" Arguments="[imageData, 0, imageData.length]" InvokedBy="loadSingleImageFromRMS" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="img" RightHandSide="Image.createImage(imageData,0,imageData.length)" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="loadImageBytesFromRMS" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="byte[]" DeclaredClass="ImageAccessor">
+              <Parameters NumberOfParameters="3">
+                <Parameter ParameterName="recordName" ParameterType="String" />
+                <Parameter ParameterName="imageName" ParameterType="String" />
+                <Parameter ParameterName="recordId" ParameterType="int" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="openRecordStore" Arguments="[recordName, false]" InvokedBy="loadImageBytesFromRMS" />
+                <MethodInvocation MethodInvocationName="getRecord" Arguments="[recordId]" InvokedBy="loadImageBytesFromRMS" />
+                <MethodInvocation MethodInvocationName="closeRecordStore" Arguments="[]" InvokedBy="loadImageBytesFromRMS" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Caught Exception: &quot; + rse]" InvokedBy="loadImageBytesFromRMS" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="imageData" RightHandSide="albumStore.getRecord(recordId)" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="deleteSingleImageFromRMS" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="boolean" DeclaredClass="ImageAccessor">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="storeName" ParameterType="String" />
+                <Parameter ParameterName="imageName" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageRS" AttributeAccessType="" HowIsItUsed="imageRS=RecordStore.openRecordStore(ALBUM_LABEL + storeName,true)" AccessedIn="deleteSingleImageFromRMS" />
+                <AttributeAccess AttributeAccessName="ALBUM_LABEL" AttributeAccessType="" HowIsItUsed="ALBUM_LABEL + storeName" AccessedIn="deleteSingleImageFromRMS" />
+                <AttributeAccess AttributeAccessName="imageInfoRS" AttributeAccessType="" HowIsItUsed="imageInfoRS=RecordStore.openRecordStore(INFO_LABEL + storeName,true)" AccessedIn="deleteSingleImageFromRMS" />
+                <AttributeAccess AttributeAccessName="INFO_LABEL" AttributeAccessType="" HowIsItUsed="INFO_LABEL + storeName" AccessedIn="deleteSingleImageFromRMS" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="openRecordStore" Arguments="[ALBUM_LABEL + storeName, true]" InvokedBy="deleteSingleImageFromRMS" />
+                <MethodInvocation MethodInvocationName="openRecordStore" Arguments="[INFO_LABEL + storeName, true]" InvokedBy="deleteSingleImageFromRMS" />
+                <MethodInvocation MethodInvocationName="getImageInfo" Arguments="[imageName]" InvokedBy="deleteSingleImageFromRMS" />
+                <MethodInvocation MethodInvocationName="getForeignRecordId" Arguments="[]" InvokedBy="deleteSingleImageFromRMS" />
+                <MethodInvocation MethodInvocationName="deleteRecord" Arguments="[rid]" InvokedBy="deleteSingleImageFromRMS" />
+                <MethodInvocation MethodInvocationName="deleteRecord" Arguments="[rid]" InvokedBy="deleteSingleImageFromRMS" />
+                <MethodInvocation MethodInvocationName="closeRecordStore" Arguments="[]" InvokedBy="deleteSingleImageFromRMS" />
+                <MethodInvocation MethodInvocationName="closeRecordStore" Arguments="[]" InvokedBy="deleteSingleImageFromRMS" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Exeption deleting Record: &quot; + rse]" InvokedBy="deleteSingleImageFromRMS" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="imageRS" RightHandSide="RecordStore.openRecordStore(ALBUM_LABEL + storeName,true)" />
+                <Assignment LeftHandSide="imageInfoRS" RightHandSide="RecordStore.openRecordStore(INFO_LABEL + storeName,true)" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="createNewPhotoAlbum" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="ImageAccessor">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="albumName" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="ALBUM_LABEL" AttributeAccessType="" HowIsItUsed="ALBUM_LABEL + albumName" AccessedIn="createNewPhotoAlbum" />
+                <AttributeAccess AttributeAccessName="INFO_LABEL" AttributeAccessType="" HowIsItUsed="INFO_LABEL + albumName" AccessedIn="createNewPhotoAlbum" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="openRecordStore" Arguments="[ALBUM_LABEL + albumName, true]" InvokedBy="createNewPhotoAlbum" />
+                <MethodInvocation MethodInvocationName="openRecordStore" Arguments="[INFO_LABEL + albumName, true]" InvokedBy="createNewPhotoAlbum" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Problem creating new record store: &quot; + rse]" InvokedBy="createNewPhotoAlbum" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="deletePhotoAlbum" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="ImageAccessor">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="albumName" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="ALBUM_LABEL" AttributeAccessType="" HowIsItUsed="ALBUM_LABEL + albumName" AccessedIn="deletePhotoAlbum" />
+                <AttributeAccess AttributeAccessName="INFO_LABEL" AttributeAccessType="" HowIsItUsed="INFO_LABEL + albumName" AccessedIn="deletePhotoAlbum" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="deleteRecordStore" Arguments="[ALBUM_LABEL + albumName]" InvokedBy="deletePhotoAlbum" />
+                <MethodInvocation MethodInvocationName="deleteRecordStore" Arguments="[INFO_LABEL + albumName]" InvokedBy="deletePhotoAlbum" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Problem deleting new record store: &quot; + rse]" InvokedBy="deletePhotoAlbum" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getAlbumNames" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="String[]" DeclaredClass="ImageAccessor">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="albumNames" AttributeAccessType="" HowIsItUsed="return albumNames;&#xA;" AccessedIn="getAlbumNames" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+        <Class ClassName="AlbumData" LOC="118" classAccessLevel="public" isInterface="false" DeclaredPackage="ubc.midp.mobilephoto.core.ui.datamodel" NOC="20">
+          <SuperInterfaces />
+          <Compositions>
+            <Composition ObjectName="imageAccessor" ClassName="ImageAccessor" />
+            <Composition ObjectName="imageInfoTable" ClassName="Hashtable" />
+          </Compositions>
+          <Comments>
+            <Comment CommentText="Created on Sep 28 2004" />
+            <Comment CommentText="author tyoung This class represents the data model for Photo Albums A Photo Album object is essentially a list of photos or images stored in a Hashtable Due to constraints of the J2ME RecordStore implementation the class stores a table of the images indexed by an identifier and a second table of image metadata ie labels album name etc This uses the ImageAccessor class to retrieve the image data from the recordstore and eventually file system etc" />
+            <Comment CommentText="imageInfo holds image metadata like label album name and foreign key index to" />
+            <Comment CommentText="corresponding RMS entry that stores the actual Image object" />
+            <Comment CommentText="If no records exist try to reset" />
+            <Comment CommentText="Constructor Creates a new instance of ImageAccessor" />
+            <Comment CommentText="Load any photo albums that are currently defined in the record store" />
+            <Comment CommentText="Shouldn t load all the albums each time" />
+            <Comment CommentText="Add a check somewhere in ImageAccessor to see if they ve been" />
+            <Comment CommentText="loaded into memory already and avoid the extra work" />
+            <Comment CommentText="Get the names of all images for a given Photo Album that exist in the Record Store" />
+            <Comment CommentText="Define a new user photo album This results in the creation of a new RMS Record store" />
+            <Comment CommentText="Get a particular image by name from a photo album The album name corresponds to a record store" />
+            <Comment CommentText="Find the record ID and store name of the image to retrieve" />
+            <Comment CommentText="Now load the image on demand from RMS and cache it in the hashtable" />
+            <Comment CommentText="rs getRecord recordId" />
+            <Comment CommentText="Delete a photo from the photo album This permanently deletes the image from the record store" />
+            <Comment CommentText="Reset the image data for the application This is a wrapper to the ImageAccessor resetImageRecordStore method It is mainly used for testing purposes to reset device data to the default album and photos" />
+            <Comment CommentText="Get the hashtable that stores the image metadata in memory return Returns the imageInfoTable" />
+            <Comment CommentText="Update the hashtable that stores the image metadata in memory param imageInfoTable The imageInfoTable to set" />
+          </Comments>
+          <Attributes>
+            <Attribute AttributeName="imageAccessor" AttributeAccessLevel="private" AttributeType="ImageAccessor" isStaticAttribute="false" />
+            <Attribute AttributeName="imageInfoTable" AttributeAccessLevel="protected" AttributeType="Hashtable" isStaticAttribute="false" />
+            <Attribute AttributeName="existingRecords" AttributeAccessLevel="public" AttributeType="boolean" isStaticAttribute="false" />
+          </Attributes>
+          <Methods>
+            <Method MethodName="AlbumData" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="AlbumData">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageAccessor" AttributeAccessType="" HowIsItUsed="imageAccessor=new ImageAccessor(this)" AccessedIn="AlbumData" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="imageAccessor" RightHandSide="new ImageAccessor(this)" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getAlbumNames" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="String[]" DeclaredClass="AlbumData">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageAccessor" AttributeAccessType="" HowIsItUsed="imageAccessor.loadAlbums()" AccessedIn="getAlbumNames" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="loadAlbums" Arguments="[]" InvokedBy="getAlbumNames" />
+                <MethodInvocation MethodInvocationName="getAlbumNames" Arguments="[]" InvokedBy="getAlbumNames" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getImageNames" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="String[]" DeclaredClass="AlbumData">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="recordName" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageAccessor" AttributeAccessType="" HowIsItUsed="imageAccessor.loadImageDataFromRMS(recordName)" AccessedIn="getImageNames" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="loadImageDataFromRMS" Arguments="[recordName]" InvokedBy="getImageNames" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="createNewPhotoAlbum" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="AlbumData">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="albumName" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageAccessor" AttributeAccessType="" HowIsItUsed="imageAccessor.createNewPhotoAlbum(albumName)" AccessedIn="createNewPhotoAlbum" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="createNewPhotoAlbum" Arguments="[albumName]" InvokedBy="createNewPhotoAlbum" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="deletePhotoAlbum" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="AlbumData">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="albumName" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageAccessor" AttributeAccessType="" HowIsItUsed="imageAccessor.deletePhotoAlbum(albumName)" AccessedIn="deletePhotoAlbum" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="deletePhotoAlbum" Arguments="[albumName]" InvokedBy="deletePhotoAlbum" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getImageFromRecordStore" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="Image" DeclaredClass="AlbumData">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="recordStore" ParameterType="String" />
+                <Parameter ParameterName="imageName" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageAccessor" AttributeAccessType="" HowIsItUsed="imageAccessor.getImageInfo(imageName)" AccessedIn="getImageFromRecordStore" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="getImageInfo" Arguments="[imageName]" InvokedBy="getImageFromRecordStore" />
+                <MethodInvocation MethodInvocationName="getForeignRecordId" Arguments="[]" InvokedBy="getImageFromRecordStore" />
+                <MethodInvocation MethodInvocationName="getParentAlbumName" Arguments="[]" InvokedBy="getImageFromRecordStore" />
+                <MethodInvocation MethodInvocationName="loadSingleImageFromRMS" Arguments="[album, imageName, imageId]" InvokedBy="getImageFromRecordStore" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="addNewPhotoToAlbum" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="AlbumData">
+              <Parameters NumberOfParameters="3">
+                <Parameter ParameterName="label" ParameterType="String" />
+                <Parameter ParameterName="path" ParameterType="String" />
+                <Parameter ParameterName="album" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageAccessor" AttributeAccessType="" HowIsItUsed="imageAccessor.addImageData(label,path,album)" AccessedIn="addNewPhotoToAlbum" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="addImageData" Arguments="[label, path, album]" InvokedBy="addNewPhotoToAlbum" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="deleteImage" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="boolean" DeclaredClass="AlbumData">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="imageName" ParameterType="String" />
+                <Parameter ParameterName="storeName" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageAccessor" AttributeAccessType="" HowIsItUsed="imageAccessor.deleteSingleImageFromRMS(imageName,storeName)" AccessedIn="deleteImage" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="deleteSingleImageFromRMS" Arguments="[imageName, storeName]" InvokedBy="deleteImage" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="resetImageData" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="AlbumData">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageAccessor" AttributeAccessType="" HowIsItUsed="imageAccessor.resetImageRecordStore()" AccessedIn="resetImageData" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="resetImageRecordStore" Arguments="[]" InvokedBy="resetImageData" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getImageInfoTable" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="Hashtable" DeclaredClass="AlbumData">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageInfoTable" AttributeAccessType="" HowIsItUsed="return imageInfoTable;&#xA;" AccessedIn="getImageInfoTable" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setImageInfoTable" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="AlbumData">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="imageInfoTable" ParameterType="Hashtable" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageInfoTable" AttributeAccessType="" HowIsItUsed="this.imageInfoTable" AccessedIn="setImageInfoTable" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="this.imageInfoTable" RightHandSide="imageInfoTable" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+        <Class ClassName="ImageData" LOC="87" classAccessLevel="public" isInterface="false" DeclaredPackage="ubc.midp.mobilephoto.core.ui.datamodel" NOC="14">
+          <SuperInterfaces />
+          <Compositions />
+          <Comments>
+            <Comment CommentText="Created on Nov 26 2004" />
+            <Comment CommentText="author trevor This class holds meta data associated with a photo or image There is a one to one relationship between images and image metadata ie Every photo in MobilePhoto will have a corresonding ImageData object It stores the recordId of the image record in RMS the recordID of the metadata record the name of the photo album s it belongs to the text label associated phone numbers etc" />
+            <Comment CommentText="imageData recordId" />
+            <Comment CommentText="image recordId" />
+            <Comment CommentText="Should we allow single image to be part of multiple albums" />
+            <Comment CommentText="Constructor param foreignRecordId param parentAlbumName param imageLabel" />
+            <Comment CommentText="return Returns the recordId" />
+            <Comment CommentText="param recordId The recordId to set" />
+            <Comment CommentText="return Returns the foreignRecordId" />
+            <Comment CommentText="param foreignRecordId The foreignRecordId to set" />
+            <Comment CommentText="return Returns the imageLabel" />
+            <Comment CommentText="param imageLabel The imageLabel to set" />
+            <Comment CommentText="return Returns the parentAlbumName" />
+            <Comment CommentText="param parentAlbumName The parentAlbumName to set" />
+          </Comments>
+          <Attributes>
+            <Attribute AttributeName="recordId" AttributeAccessLevel="private" AttributeType="int" isStaticAttribute="false" />
+            <Attribute AttributeName="foreignRecordId" AttributeAccessLevel="private" AttributeType="int" isStaticAttribute="false" />
+            <Attribute AttributeName="parentAlbumName" AttributeAccessLevel="private" AttributeType="String" isStaticAttribute="false" />
+            <Attribute AttributeName="imageLabel" AttributeAccessLevel="private" AttributeType="String" isStaticAttribute="false" />
+          </Attributes>
+          <Methods>
+            <Method MethodName="ImageData" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="ImageData">
+              <Parameters NumberOfParameters="3">
+                <Parameter ParameterName="foreignRecordId" ParameterType="int" />
+                <Parameter ParameterName="parentAlbumName" ParameterType="String" />
+                <Parameter ParameterName="imageLabel" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="foreignRecordId" AttributeAccessType="" HowIsItUsed="this.foreignRecordId" AccessedIn="ImageData" />
+                <AttributeAccess AttributeAccessName="parentAlbumName" AttributeAccessType="" HowIsItUsed="this.parentAlbumName" AccessedIn="ImageData" />
+                <AttributeAccess AttributeAccessName="imageLabel" AttributeAccessType="" HowIsItUsed="this.imageLabel" AccessedIn="ImageData" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="this.foreignRecordId" RightHandSide="foreignRecordId" />
+                <Assignment LeftHandSide="this.parentAlbumName" RightHandSide="parentAlbumName" />
+                <Assignment LeftHandSide="this.imageLabel" RightHandSide="imageLabel" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getRecordId" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="int" DeclaredClass="ImageData">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="recordId" AttributeAccessType="" HowIsItUsed="return recordId;&#xA;" AccessedIn="getRecordId" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setRecordId" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="ImageData">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="recordId" ParameterType="int" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="recordId" AttributeAccessType="" HowIsItUsed="this.recordId" AccessedIn="setRecordId" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="this.recordId" RightHandSide="recordId" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getForeignRecordId" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="int" DeclaredClass="ImageData">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="foreignRecordId" AttributeAccessType="" HowIsItUsed="return foreignRecordId;&#xA;" AccessedIn="getForeignRecordId" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setForeignRecordId" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="ImageData">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="foreignRecordId" ParameterType="int" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="foreignRecordId" AttributeAccessType="" HowIsItUsed="this.foreignRecordId" AccessedIn="setForeignRecordId" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="this.foreignRecordId" RightHandSide="foreignRecordId" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getImageLabel" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="String" DeclaredClass="ImageData">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageLabel" AttributeAccessType="" HowIsItUsed="return imageLabel;&#xA;" AccessedIn="getImageLabel" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setImageLabel" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="ImageData">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="imageLabel" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageLabel" AttributeAccessType="" HowIsItUsed="this.imageLabel" AccessedIn="setImageLabel" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="this.imageLabel" RightHandSide="imageLabel" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getParentAlbumName" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="String" DeclaredClass="ImageData">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="parentAlbumName" AttributeAccessType="" HowIsItUsed="return parentAlbumName;&#xA;" AccessedIn="getParentAlbumName" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="setParentAlbumName" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="ImageData">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="parentAlbumName" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="parentAlbumName" AttributeAccessType="" HowIsItUsed="this.parentAlbumName" AccessedIn="setParentAlbumName" />
+              </AttributeAccesses>
+              <MethodInvocations />
+              <MethodAssignments>
+                <Assignment LeftHandSide="this.parentAlbumName" RightHandSide="parentAlbumName" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Package>
+    <Package PackageName="ubc.midp.mobilephoto.core.ui.screens">
+      <Classes>
+        <Class ClassName="NewAlbumScreen" LOC="45" classAccessLevel="public" isInterface="false" Superclass="Form" DeclaredPackage="ubc.midp.mobilephoto.core.ui.screens" NOC="5">
+          <SuperInterfaces />
+          <Compositions>
+            <Composition ObjectName="albumName" ClassName="TextField" />
+            <Composition ObjectName="ok" ClassName="Command" />
+            <Composition ObjectName="cancel" ClassName="Command" />
+          </Compositions>
+          <Comments>
+            <Comment CommentText="author tyoung This form is displayed when the user defines a new photo album from the AlbumListScreen TODO This feature is not fully implemented The commands are in place to create a new album but currently it just creates a hard coded album name for testing" />
+            <Comment CommentText="param arg0" />
+            <Comment CommentText="param arg0 param arg1" />
+            <Comment CommentText="TODO Auto generated constructor stub" />
+            <Comment CommentText="return Returns the new Album Name" />
+          </Comments>
+          <Attributes>
+            <Attribute AttributeName="albumName" AttributeAccessLevel="default" AttributeType="TextField" isStaticAttribute="false" />
+            <Attribute AttributeName="ok" AttributeAccessLevel="default" AttributeType="Command" isStaticAttribute="false" />
+            <Attribute AttributeName="cancel" AttributeAccessLevel="default" AttributeType="Command" isStaticAttribute="false" />
+          </Attributes>
+          <Methods>
+            <Method MethodName="NewAlbumScreen" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="NewAlbumScreen">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="name" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="albumName" AttributeAccessType="" HowIsItUsed="this.append(albumName)" AccessedIn="NewAlbumScreen" />
+                <AttributeAccess AttributeAccessName="ok" AttributeAccessType="" HowIsItUsed="ok=new Command(&quot;Save&quot;,Command.SCREEN,0)" AccessedIn="NewAlbumScreen" />
+                <AttributeAccess AttributeAccessName="cancel" AttributeAccessType="" HowIsItUsed="cancel=new Command(&quot;Cancel&quot;,Command.EXIT,1)" AccessedIn="NewAlbumScreen" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="append" Arguments="[albumName]" InvokedBy="NewAlbumScreen" />
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[ok]" InvokedBy="NewAlbumScreen" />
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[cancel]" InvokedBy="NewAlbumScreen" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="ok" RightHandSide="new Command(&quot;Save&quot;,Command.SCREEN,0)" />
+                <Assignment LeftHandSide="cancel" RightHandSide="new Command(&quot;Cancel&quot;,Command.EXIT,1)" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="NewAlbumScreen" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="NewAlbumScreen">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="title" ParameterType="String" />
+                <Parameter ParameterName="items" ParameterType="Item[]" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getAlbumName" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="String" DeclaredClass="NewAlbumScreen">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="albumName" AttributeAccessType="" HowIsItUsed="albumName.getString()" AccessedIn="getAlbumName" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="getString" Arguments="[]" InvokedBy="getAlbumName" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+        <Class ClassName="AddPhotoToAlbum" LOC="26" classAccessLevel="public" isInterface="false" Superclass="Form" DeclaredPackage="ubc.midp.mobilephoto.core.ui.screens" NOC="0">
+          <SuperInterfaces />
+          <Compositions>
+            <Composition ObjectName="labeltxt" ClassName="TextField" />
+            <Composition ObjectName="photopathtxt" ClassName="TextField" />
+            <Composition ObjectName="ok" ClassName="Command" />
+            <Composition ObjectName="cancel" ClassName="Command" />
+          </Compositions>
+          <Comments />
+          <Attributes>
+            <Attribute AttributeName="labeltxt" AttributeAccessLevel="default" AttributeType="TextField" isStaticAttribute="false" />
+            <Attribute AttributeName="photopathtxt" AttributeAccessLevel="default" AttributeType="TextField" isStaticAttribute="false" />
+            <Attribute AttributeName="ok" AttributeAccessLevel="default" AttributeType="Command" isStaticAttribute="false" />
+            <Attribute AttributeName="cancel" AttributeAccessLevel="default" AttributeType="Command" isStaticAttribute="false" />
+          </Attributes>
+          <Methods>
+            <Method MethodName="AddPhotoToAlbum" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="AddPhotoToAlbum">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="title" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="labeltxt" AttributeAccessType="" HowIsItUsed="this.append(labeltxt)" AccessedIn="AddPhotoToAlbum" />
+                <AttributeAccess AttributeAccessName="photopathtxt" AttributeAccessType="" HowIsItUsed="this.append(photopathtxt)" AccessedIn="AddPhotoToAlbum" />
+                <AttributeAccess AttributeAccessName="ok" AttributeAccessType="" HowIsItUsed="ok=new Command(&quot;Save Add Photo&quot;,Command.SCREEN,0)" AccessedIn="AddPhotoToAlbum" />
+                <AttributeAccess AttributeAccessName="cancel" AttributeAccessType="" HowIsItUsed="cancel=new Command(&quot;Cancel&quot;,Command.EXIT,1)" AccessedIn="AddPhotoToAlbum" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="append" Arguments="[labeltxt]" InvokedBy="AddPhotoToAlbum" />
+                <MethodInvocation MethodInvocationName="append" Arguments="[photopathtxt]" InvokedBy="AddPhotoToAlbum" />
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[ok]" InvokedBy="AddPhotoToAlbum" />
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[cancel]" InvokedBy="AddPhotoToAlbum" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="ok" RightHandSide="new Command(&quot;Save Add Photo&quot;,Command.SCREEN,0)" />
+                <Assignment LeftHandSide="cancel" RightHandSide="new Command(&quot;Cancel&quot;,Command.EXIT,1)" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getPhotoName" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="String" DeclaredClass="AddPhotoToAlbum">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="labeltxt" AttributeAccessType="" HowIsItUsed="labeltxt.getString()" AccessedIn="getPhotoName" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="getString" Arguments="[]" InvokedBy="getPhotoName" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getPath" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="String" DeclaredClass="AddPhotoToAlbum">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="photopathtxt" AttributeAccessType="" HowIsItUsed="photopathtxt.getString()" AccessedIn="getPath" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="getString" Arguments="[]" InvokedBy="getPath" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+        <Class ClassName="AlbumListScreen" LOC="74" classAccessLevel="public" isInterface="false" Superclass="List" DeclaredPackage="ubc.midp.mobilephoto.core.ui.screens" NOC="7">
+          <SuperInterfaces />
+          <Compositions>
+            <Composition ObjectName="exitCommand" ClassName="Command" />
+            <Composition ObjectName="selectCommand" ClassName="Command" />
+            <Composition ObjectName="createAlbumCommand" ClassName="Command" />
+            <Composition ObjectName="deleteAlbumCommand" ClassName="Command" />
+            <Composition ObjectName="resetCommand" ClassName="Command" />
+          </Compositions>
+          <Comments>
+            <Comment CommentText="Created on Sep 13 2004" />
+            <Comment CommentText="author trevor This screen displays a list of photo albums available to select A user can also create a new album on this screen TODO Add delete photo album option" />
+            <Comment CommentText="Constructor" />
+            <Comment CommentText="Constructor param arg0 param arg1" />
+            <Comment CommentText="Constructor param arg0 param arg1 param arg2 param arg3" />
+            <Comment CommentText="Initialize the menu items for this screen" />
+            <Comment CommentText="Add album name to menu list" />
+          </Comments>
+          <Attributes>
+            <Attribute AttributeName="exitCommand" AttributeAccessLevel="public" AttributeType="Command" isStaticAttribute="true" />
+            <Attribute AttributeName="selectCommand" AttributeAccessLevel="public" AttributeType="Command" isStaticAttribute="true" />
+            <Attribute AttributeName="createAlbumCommand" AttributeAccessLevel="public" AttributeType="Command" isStaticAttribute="true" />
+            <Attribute AttributeName="deleteAlbumCommand" AttributeAccessLevel="public" AttributeType="Command" isStaticAttribute="true" />
+            <Attribute AttributeName="resetCommand" AttributeAccessLevel="public" AttributeType="Command" isStaticAttribute="true" />
+          </Attributes>
+          <Methods>
+            <Method MethodName="AlbumListScreen" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="AlbumListScreen">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="AlbumListScreen" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="AlbumListScreen">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="arg0" ParameterType="String" />
+                <Parameter ParameterName="arg1" ParameterType="int" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="AlbumListScreen" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="AlbumListScreen">
+              <Parameters NumberOfParameters="4">
+                <Parameter ParameterName="arg0" ParameterType="String" />
+                <Parameter ParameterName="arg1" ParameterType="int" />
+                <Parameter ParameterName="arg2" ParameterType="String[]" />
+                <Parameter ParameterName="arg3" ParameterType="Image[]" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="initMenu" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="AlbumListScreen">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="exitCommand" AttributeAccessType="" HowIsItUsed="this.addCommand(exitCommand)" AccessedIn="initMenu" />
+                <AttributeAccess AttributeAccessName="selectCommand" AttributeAccessType="" HowIsItUsed="this.addCommand(selectCommand)" AccessedIn="initMenu" />
+                <AttributeAccess AttributeAccessName="createAlbumCommand" AttributeAccessType="" HowIsItUsed="this.addCommand(createAlbumCommand)" AccessedIn="initMenu" />
+                <AttributeAccess AttributeAccessName="deleteAlbumCommand" AttributeAccessType="" HowIsItUsed="this.addCommand(deleteAlbumCommand)" AccessedIn="initMenu" />
+                <AttributeAccess AttributeAccessName="resetCommand" AttributeAccessType="" HowIsItUsed="this.addCommand(resetCommand)" AccessedIn="initMenu" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[exitCommand]" InvokedBy="initMenu" />
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[selectCommand]" InvokedBy="initMenu" />
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[createAlbumCommand]" InvokedBy="initMenu" />
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[deleteAlbumCommand]" InvokedBy="initMenu" />
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[resetCommand]" InvokedBy="initMenu" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="deleteAll" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="AlbumListScreen">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="size" Arguments="[]" InvokedBy="deleteAll" />
+                <MethodInvocation MethodInvocationName="delete" Arguments="[i]" InvokedBy="deleteAll" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="repaintListAlbum" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="AlbumListScreen">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="names" ParameterType="String[]" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="deleteAll" Arguments="[]" InvokedBy="repaintListAlbum" />
+                <MethodInvocation MethodInvocationName="append" Arguments="[albumNames[i], null]" InvokedBy="repaintListAlbum" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+        <Class ClassName="SplashScreen" LOC="50" classAccessLevel="public" isInterface="false" Superclass="Canvas" DeclaredPackage="ubc.midp.mobilephoto.core.ui.screens" NOC="4">
+          <SuperInterfaces />
+          <Compositions>
+            <Composition ObjectName="display" ClassName="Display" />
+            <Composition ObjectName="next" ClassName="Displayable" />
+            <Composition ObjectName="timer" ClassName="Timer" />
+          </Compositions>
+          <Comments>
+            <Comment CommentText="author tyoung This is a splash screen that will display for a brief period when the application loads It is currently disabled and hasn t been tested yet" />
+            <Comment CommentText="Constructor" />
+            <Comment CommentText="If a key is pressed dismiss the splash screen non Javadoc see javax microedition lcdui Canvas keyPressed int" />
+            <Comment CommentText="do your drawing here" />
+          </Comments>
+          <Attributes>
+            <Attribute AttributeName="display" AttributeAccessLevel="private" AttributeType="Display" isStaticAttribute="false" />
+            <Attribute AttributeName="next" AttributeAccessLevel="private" AttributeType="Displayable" isStaticAttribute="false" />
+            <Attribute AttributeName="timer" AttributeAccessLevel="private" AttributeType="Timer" isStaticAttribute="false" />
+          </Attributes>
+          <Methods>
+            <Method MethodName="SplashScreen" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="SplashScreen">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="display" ParameterType="Display" />
+                <Parameter ParameterName="next" ParameterType="Displayable" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="display" AttributeAccessType="" HowIsItUsed="this.display" AccessedIn="SplashScreen" />
+                <AttributeAccess AttributeAccessName="next" AttributeAccessType="" HowIsItUsed="this.next" AccessedIn="SplashScreen" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="setCurrent" Arguments="[this]" InvokedBy="SplashScreen" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="this.display" RightHandSide="display" />
+                <Assignment LeftHandSide="this.next" RightHandSide="next" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="keyPressed" MethodAccessLevel="protected" isStaticMethod="false" MethodReturnType="void" DeclaredClass="SplashScreen">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="keyCode" ParameterType="int" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="dismiss" Arguments="[]" InvokedBy="keyPressed" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="paint" MethodAccessLevel="protected" isStaticMethod="false" MethodReturnType="void" DeclaredClass="SplashScreen">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="g" ParameterType="Graphics" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="pointerPressed" MethodAccessLevel="protected" isStaticMethod="false" MethodReturnType="void" DeclaredClass="SplashScreen">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="x" ParameterType="int" />
+                <Parameter ParameterName="y" ParameterType="int" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="dismiss" Arguments="[]" InvokedBy="pointerPressed" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="showNotify" MethodAccessLevel="protected" isStaticMethod="false" MethodReturnType="void" DeclaredClass="SplashScreen">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="timer" AttributeAccessType="" HowIsItUsed="timer.schedule(new CountDown(),5000)" AccessedIn="showNotify" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="schedule" Arguments="[new CountDown(), 5000]" InvokedBy="showNotify" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="dismiss" MethodAccessLevel="private" isStaticMethod="false" MethodReturnType="void" DeclaredClass="SplashScreen">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="timer" AttributeAccessType="" HowIsItUsed="timer.cancel()" AccessedIn="dismiss" />
+                <AttributeAccess AttributeAccessName="display" AttributeAccessType="" HowIsItUsed="display.setCurrent(next)" AccessedIn="dismiss" />
+                <AttributeAccess AttributeAccessName="next" AttributeAccessType="" HowIsItUsed="display.setCurrent(next)" AccessedIn="dismiss" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="cancel" Arguments="[]" InvokedBy="dismiss" />
+                <MethodInvocation MethodInvocationName="setCurrent" Arguments="[next]" InvokedBy="dismiss" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+        <Class ClassName="PhotoListScreen" LOC="62" classAccessLevel="public" isInterface="false" Superclass="List" DeclaredPackage="ubc.midp.mobilephoto.core.ui.screens" NOC="10">
+          <SuperInterfaces />
+          <Compositions>
+            <Composition ObjectName="viewCommand" ClassName="Command" />
+            <Composition ObjectName="addCommand" ClassName="Command" />
+            <Composition ObjectName="deleteCommand" ClassName="Command" />
+            <Composition ObjectName="backCommand" ClassName="Command" />
+          </Compositions>
+          <Comments>
+            <Comment CommentText="Created on Sep 13 2004" />
+            <Comment CommentText="author trevor This screen shows a listing of all photos for a selected photo album This is the screen that contains most of the feature menu items From this screen a user can choose to view photos add or delete photos send photos to other users etc" />
+            <Comment CommentText="Add the core application commands always" />
+            <Comment CommentText="Constructor" />
+            <Comment CommentText="Constructor param arg0 param arg1" />
+            <Comment CommentText="Constructor param arg0 param arg1 param arg2 param arg3" />
+            <Comment CommentText="Initialize the menu items for this screen" />
+            <Comment CommentText="Add the core application commands always" />
+            <Comment CommentText="Add the optional feature menu items only if they are specified in" />
+            <Comment CommentText="the xxxBuild properties file using the preprocessor symbols value" />
+          </Comments>
+          <Attributes>
+            <Attribute AttributeName="viewCommand" AttributeAccessLevel="public" AttributeType="Command" isStaticAttribute="true" />
+            <Attribute AttributeName="addCommand" AttributeAccessLevel="public" AttributeType="Command" isStaticAttribute="true" />
+            <Attribute AttributeName="deleteCommand" AttributeAccessLevel="public" AttributeType="Command" isStaticAttribute="true" />
+            <Attribute AttributeName="backCommand" AttributeAccessLevel="public" AttributeType="Command" isStaticAttribute="true" />
+          </Attributes>
+          <Methods>
+            <Method MethodName="PhotoListScreen" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="PhotoListScreen">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="PhotoListScreen" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="PhotoListScreen">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="arg0" ParameterType="String" />
+                <Parameter ParameterName="arg1" ParameterType="int" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="PhotoListScreen" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="PhotoListScreen">
+              <Parameters NumberOfParameters="4">
+                <Parameter ParameterName="arg0" ParameterType="String" />
+                <Parameter ParameterName="arg1" ParameterType="int" />
+                <Parameter ParameterName="arg2" ParameterType="String[]" />
+                <Parameter ParameterName="arg3" ParameterType="Image[]" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="initMenu" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="PhotoListScreen">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="addCommand" AttributeAccessType="" HowIsItUsed="this.addCommand(viewCommand)" AccessedIn="initMenu" />
+                <AttributeAccess AttributeAccessName="viewCommand" AttributeAccessType="" HowIsItUsed="this.addCommand(viewCommand)" AccessedIn="initMenu" />
+                <AttributeAccess AttributeAccessName="deleteCommand" AttributeAccessType="" HowIsItUsed="this.addCommand(deleteCommand)" AccessedIn="initMenu" />
+                <AttributeAccess AttributeAccessName="backCommand" AttributeAccessType="" HowIsItUsed="this.addCommand(backCommand)" AccessedIn="initMenu" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[viewCommand]" InvokedBy="initMenu" />
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[addCommand]" InvokedBy="initMenu" />
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[deleteCommand]" InvokedBy="initMenu" />
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[backCommand]" InvokedBy="initMenu" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+        <Class ClassName="PhotoViewScreen" LOC="60" classAccessLevel="public" isInterface="false" Superclass="Canvas" DeclaredPackage="ubc.midp.mobilephoto.core.ui.screens" NOC="8">
+          <SuperInterfaces />
+          <Compositions>
+            <Composition ObjectName="image" ClassName="Image" />
+            <Composition ObjectName="model" ClassName="AlbumData" />
+            <Composition ObjectName="backCommand" ClassName="Command" />
+          </Compositions>
+          <Comments>
+            <Comment CommentText="" />
+            <Comment CommentText="This screen displays a selected image" />
+            <Comment CommentText="Constructor param img" />
+            <Comment CommentText="Instead of loading it from a list pass the image in directly" />
+            <Comment CommentText="Constructor param mod param name" />
+            <Comment CommentText="Get the current image from the hashtable stored in the parent midlet" />
+            <Comment CommentText="non Javadoc see javax microedition lcdui Canvas paint javax microedition lcdui Graphics" />
+            <Comment CommentText="Draw the image for now start drawing in top left corner of screen" />
+          </Comments>
+          <Attributes>
+            <Attribute AttributeName="imageName" AttributeAccessLevel="default" AttributeType="String" isStaticAttribute="false" />
+            <Attribute AttributeName="image" AttributeAccessLevel="default" AttributeType="Image" isStaticAttribute="false" />
+            <Attribute AttributeName="model" AttributeAccessLevel="default" AttributeType="AlbumData" isStaticAttribute="false" />
+            <Attribute AttributeName="backCommand" AttributeAccessLevel="public" AttributeType="Command" isStaticAttribute="true" />
+          </Attributes>
+          <Methods>
+            <Method MethodName="PhotoViewScreen" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="PhotoViewScreen">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="img" ParameterType="Image" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="image" AttributeAccessType="" HowIsItUsed="image=img" AccessedIn="PhotoViewScreen" />
+                <AttributeAccess AttributeAccessName="backCommand" AttributeAccessType="" HowIsItUsed="this.addCommand(backCommand)" AccessedIn="PhotoViewScreen" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[backCommand]" InvokedBy="PhotoViewScreen" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="image" RightHandSide="img" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="PhotoViewScreen" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="PhotoViewScreen">
+              <Parameters NumberOfParameters="2">
+                <Parameter ParameterName="mod" ParameterType="AlbumData" />
+                <Parameter ParameterName="name" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="imageName" AttributeAccessType="" HowIsItUsed="imageName=name" AccessedIn="PhotoViewScreen" />
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="model=mod" AccessedIn="PhotoViewScreen" />
+                <AttributeAccess AttributeAccessName="backCommand" AttributeAccessType="" HowIsItUsed="this.addCommand(backCommand)" AccessedIn="PhotoViewScreen" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="loadImage" Arguments="[]" InvokedBy="PhotoViewScreen" />
+                <MethodInvocation MethodInvocationName="addCommand" Arguments="[backCommand]" InvokedBy="PhotoViewScreen" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="imageName" RightHandSide="name" />
+                <Assignment LeftHandSide="model" RightHandSide="mod" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="loadImage" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="PhotoViewScreen">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="image" AttributeAccessType="" HowIsItUsed="image=model.getImageFromRecordStore(null,imageName)" AccessedIn="loadImage" />
+                <AttributeAccess AttributeAccessName="model" AttributeAccessType="" HowIsItUsed="model.getImageFromRecordStore(null,imageName)" AccessedIn="loadImage" />
+                <AttributeAccess AttributeAccessName="imageName" AttributeAccessType="" HowIsItUsed="model.getImageFromRecordStore(null,imageName)" AccessedIn="loadImage" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="getImageFromRecordStore" Arguments="[null, imageName]" InvokedBy="loadImage" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="image" RightHandSide="model.getImageFromRecordStore(null,imageName)" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="paint" MethodAccessLevel="protected" isStaticMethod="false" MethodReturnType="void" DeclaredClass="PhotoViewScreen">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="g" ParameterType="Graphics" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="image" AttributeAccessType="" HowIsItUsed="image == null" AccessedIn="paint" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="setGrayScale" Arguments="[255]" InvokedBy="paint" />
+                <MethodInvocation MethodInvocationName="fillRect" Arguments="[0, 0, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT]" InvokedBy="paint" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Screen size:&quot; + Constants.SCREEN_WIDTH + &quot;:&quot;+ Constants.SCREEN_HEIGHT]" InvokedBy="paint" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;PhotoViewScreen::paint(): Image object was null.&quot;]" InvokedBy="paint" />
+                <MethodInvocation MethodInvocationName="drawImage" Arguments="[image, 0, 0, Graphics.TOP | Graphics.LEFT]" InvokedBy="paint" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+        <Class ClassName="CountDown" LOC="5" classAccessLevel="public" isInterface="false" Superclass="TimerTask" DeclaredPackage="ubc.midp.mobilephoto.core.ui.screens" NOC="0">
+          <SuperInterfaces />
+          <Compositions />
+          <Comments />
+          <Attributes />
+          <Methods>
+            <Method MethodName="run" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="void" DeclaredClass="CountDown">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="dismiss" Arguments="[]" InvokedBy="run" />
+              </MethodInvocations>
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Package>
+    <Package PackageName="ubc.midp.mobilephoto.core.util">
+      <Classes>
+        <Class ClassName="Constants" LOC="37" classAccessLevel="public" isInterface="false" DeclaredPackage="ubc.midp.mobilephoto.core.util" NOC="17">
+          <SuperInterfaces />
+          <Compositions />
+          <Comments>
+            <Comment CommentText="Created on 31 Mar 2005" />
+            <Comment CommentText="author tyoung This class contains all constants used by the MobilePhoto application It is the central location to store any static string data" />
+            <Comment CommentText="ifdef device screen 176x205" />
+            <Comment CommentText="Screen Size" />
+            <Comment CommentText="elifdef device screen 128x149" />
+            <Comment CommentText="" />
+            <Comment CommentText="Screen Size" />
+            <Comment CommentText="public static final int SCREEN WIDTH 128" />
+            <Comment CommentText="public static final int SCREEN HEIGHT 149" />
+            <Comment CommentText="" />
+            <Comment CommentText="elifdef device screen 132x176" />
+            <Comment CommentText="" />
+            <Comment CommentText="Screen Size" />
+            <Comment CommentText="public static final int SCREEN WIDTH 132" />
+            <Comment CommentText="public static final int SCREEN HEIGHT 176" />
+            <Comment CommentText="" />
+            <Comment CommentText="endif" />
+          </Comments>
+          <Attributes>
+            <Attribute AttributeName="ALBUMLIST_SCREEN" AttributeAccessLevel="public" AttributeType="String" isStaticAttribute="true" />
+            <Attribute AttributeName="IMAGE_SCREEN" AttributeAccessLevel="public" AttributeType="String" isStaticAttribute="true" />
+            <Attribute AttributeName="IMAGELIST_SCREEN" AttributeAccessLevel="public" AttributeType="String" isStaticAttribute="true" />
+            <Attribute AttributeName="NEWALBUM_SCREEN" AttributeAccessLevel="public" AttributeType="String" isStaticAttribute="true" />
+            <Attribute AttributeName="CONFIRMDELETEALBUM_SCREEN" AttributeAccessLevel="public" AttributeType="String" isStaticAttribute="true" />
+            <Attribute AttributeName="ADDPHOTOTOALBUM_SCREEN" AttributeAccessLevel="public" AttributeType="String" isStaticAttribute="true" />
+            <Attribute AttributeName="SCREEN_WIDTH" AttributeAccessLevel="public" AttributeType="int" isStaticAttribute="true" />
+            <Attribute AttributeName="SCREEN_HEIGHT" AttributeAccessLevel="public" AttributeType="int" isStaticAttribute="true" />
+          </Attributes>
+          <Methods />
+        </Class>
+        <Class ClassName="ImageUtil" LOC="165" classAccessLevel="public" isInterface="false" DeclaredPackage="ubc.midp.mobilephoto.core.util" NOC="26">
+          <SuperInterfaces />
+          <Compositions />
+          <Comments>
+            <Comment CommentText="author trevor This is a utility class It performs conversions between Image objects and byte arrays and Image metadata objects and byte arrays Byte arrays are the main format for storing data in RMS and for sending data over the wire" />
+            <Comment CommentText="Delimiter used in record store data to separate fields in a string" />
+            <Comment CommentText="Constructor" />
+            <Comment CommentText="This method reads an Image from an Input Stream and converts it from a standard image file format into a byte array so that it can be transported over wireless protocols such as SMS" />
+            <Comment CommentText="Read an Image into a byte array" />
+            <Comment CommentText="Required to transfer images over SMS" />
+            <Comment CommentText="Transfer all data from old array to temp array" />
+            <Comment CommentText="Re Copy contents back into new bigger array" />
+            <Comment CommentText="Set the size to be exact" />
+            <Comment CommentText="IOException e" />
+            <Comment CommentText="Convert the byte array from a retrieved RecordStore record into the ImageInfo renamed ImageData object Order of the string will look like this recordId foreignRecordId albumName imageLabel Depending on the optional features additional fields may be phoneNum" />
+            <Comment CommentText="Track our position in the String using delimiters" />
+            <Comment CommentText="Ie Get chars from beginning of String to first Delim" />
+            <Comment CommentText="Get recordID int value as String everything before first delimeter" />
+            <Comment CommentText="Get foreign record ID corresponding to the image table" />
+            <Comment CommentText="Get Album name recordstore next delimeter" />
+            <Comment CommentText="TODO Add preprocessor statements here" />
+            <Comment CommentText="Get the phone number if one exists" />
+            <Comment CommentText="Convert the ImageInfo renamed ImageData object into bytes so we can store it in RMS Order of the string will look like this recordId foreignRecordId albumName imageLabel Depending on the optional features additional fields may be phoneNum" />
+            <Comment CommentText="Take each String and get the bytes from it separating fields with a delimiter" />
+            <Comment CommentText="Convert the record ID for this record" />
+            <Comment CommentText="Convert the Foreign Record ID field for the corresponding Image record store" />
+            <Comment CommentText="Convert the album name field" />
+            <Comment CommentText="Convert the label name field" />
+            <Comment CommentText="TODO Add pre processor statements" />
+            <Comment CommentText="Convert the phone number field" />
+          </Comments>
+          <Attributes>
+            <Attribute AttributeName="DELIMITER" AttributeAccessLevel="private" AttributeType="String" isStaticAttribute="true" />
+          </Attributes>
+          <Methods>
+            <Method MethodName="ImageUtil" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="constructor" DeclaredClass="ImageUtil">
+              <Parameters NumberOfParameters="0" />
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations />
+              <MethodAssignments />
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="readImageAsByteArray" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="byte[]" DeclaredClass="ImageUtil">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="imageFile" ParameterType="String" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses />
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="getResourceAsStream" Arguments="[imageFile]" InvokedBy="readImageAsByteArray" />
+                <MethodInvocation MethodInvocationName="getClass" Arguments="[]" InvokedBy="readImageAsByteArray" />
+                <MethodInvocation MethodInvocationName="read" Arguments="[b]" InvokedBy="readImageAsByteArray" />
+                <MethodInvocation MethodInvocationName="close" Arguments="[]" InvokedBy="readImageAsByteArray" />
+                <MethodInvocation MethodInvocationName="println" Arguments="[&quot;Exception: &quot; + e]" InvokedBy="readImageAsByteArray" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="bArray2" RightHandSide="new byte[bArray.length]" />
+                <Assignment LeftHandSide="i" RightHandSide="0" />
+                <Assignment LeftHandSide="bArray2[i]" RightHandSide="bArray[i]" />
+                <Assignment LeftHandSide="bArray" RightHandSide="new byte[bArray2.length + 500]" />
+                <Assignment LeftHandSide="i" RightHandSide="0" />
+                <Assignment LeftHandSide="bArray[i]" RightHandSide="bArray2[i]" />
+                <Assignment LeftHandSide="bArray[len]" RightHandSide="b[0]" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getImageInfoFromBytes" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="ImageData" DeclaredClass="ImageUtil">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="bytes" ParameterType="byte[]" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="DELIMITER" AttributeAccessType="" HowIsItUsed="iiString.indexOf(DELIMITER)" AccessedIn="getImageInfoFromBytes" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="indexOf" Arguments="[DELIMITER]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="substring" Arguments="[startIndex, endIndex]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="indexOf" Arguments="[DELIMITER, startIndex]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="substring" Arguments="[startIndex, endIndex]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="indexOf" Arguments="[DELIMITER, startIndex]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="substring" Arguments="[startIndex, endIndex]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="indexOf" Arguments="[DELIMITER, startIndex]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="length" Arguments="[]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="substring" Arguments="[startIndex, endIndex]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="length" Arguments="[]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="indexOf" Arguments="[DELIMITER, startIndex]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="length" Arguments="[]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="substring" Arguments="[startIndex, endIndex]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="valueOf" Arguments="[fidString]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="intValue" Arguments="[]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="valueOf" Arguments="[intString]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="setRecordId" Arguments="[x.intValue()]" InvokedBy="getImageInfoFromBytes" />
+                <MethodInvocation MethodInvocationName="intValue" Arguments="[]" InvokedBy="getImageInfoFromBytes" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="startIndex" RightHandSide="endIndex + 1" />
+                <Assignment LeftHandSide="endIndex" RightHandSide="iiString.indexOf(DELIMITER,startIndex)" />
+                <Assignment LeftHandSide="startIndex" RightHandSide="endIndex + 1" />
+                <Assignment LeftHandSide="endIndex" RightHandSide="iiString.indexOf(DELIMITER,startIndex)" />
+                <Assignment LeftHandSide="startIndex" RightHandSide="endIndex + 1" />
+                <Assignment LeftHandSide="endIndex" RightHandSide="iiString.indexOf(DELIMITER,startIndex)" />
+                <Assignment LeftHandSide="endIndex" RightHandSide="iiString.length()" />
+                <Assignment LeftHandSide="startIndex" RightHandSide="endIndex + 1" />
+                <Assignment LeftHandSide="endIndex" RightHandSide="iiString.indexOf(DELIMITER,startIndex)" />
+                <Assignment LeftHandSide="endIndex" RightHandSide="iiString.length()" />
+                <Assignment LeftHandSide="x" RightHandSide="Integer.valueOf(intString)" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+            <Method MethodName="getBytesFromImageInfo" MethodAccessLevel="public" isStaticMethod="false" MethodReturnType="byte[]" DeclaredClass="ImageUtil">
+              <Parameters NumberOfParameters="1">
+                <Parameter ParameterName="ii" ParameterType="ImageData" />
+              </Parameters>
+              <LocalVariables />
+              <AttributeAccesses>
+                <AttributeAccess AttributeAccessName="DELIMITER" AttributeAccessType="" HowIsItUsed="byteString.concat(DELIMITER)" AccessedIn="getBytesFromImageInfo" />
+              </AttributeAccesses>
+              <MethodInvocations>
+                <MethodInvocation MethodInvocationName="getRecordId" Arguments="[]" InvokedBy="getBytesFromImageInfo" />
+                <MethodInvocation MethodInvocationName="concat" Arguments="[j.toString()]" InvokedBy="getBytesFromImageInfo" />
+                <MethodInvocation MethodInvocationName="toString" Arguments="[]" InvokedBy="getBytesFromImageInfo" />
+                <MethodInvocation MethodInvocationName="concat" Arguments="[DELIMITER]" InvokedBy="getBytesFromImageInfo" />
+                <MethodInvocation MethodInvocationName="getForeignRecordId" Arguments="[]" InvokedBy="getBytesFromImageInfo" />
+                <MethodInvocation MethodInvocationName="concat" Arguments="[j2.toString()]" InvokedBy="getBytesFromImageInfo" />
+                <MethodInvocation MethodInvocationName="toString" Arguments="[]" InvokedBy="getBytesFromImageInfo" />
+                <MethodInvocation MethodInvocationName="concat" Arguments="[DELIMITER]" InvokedBy="getBytesFromImageInfo" />
+                <MethodInvocation MethodInvocationName="concat" Arguments="[ii.getParentAlbumName()]" InvokedBy="getBytesFromImageInfo" />
+                <MethodInvocation MethodInvocationName="getParentAlbumName" Arguments="[]" InvokedBy="getBytesFromImageInfo" />
+                <MethodInvocation MethodInvocationName="concat" Arguments="[DELIMITER]" InvokedBy="getBytesFromImageInfo" />
+                <MethodInvocation MethodInvocationName="concat" Arguments="[ii.getImageLabel()]" InvokedBy="getBytesFromImageInfo" />
+                <MethodInvocation MethodInvocationName="getImageLabel" Arguments="[]" InvokedBy="getBytesFromImageInfo" />
+                <MethodInvocation MethodInvocationName="getBytes" Arguments="[]" InvokedBy="getBytesFromImageInfo" />
+              </MethodInvocations>
+              <MethodAssignments>
+                <Assignment LeftHandSide="byteString" RightHandSide="byteString.concat(j.toString())" />
+                <Assignment LeftHandSide="byteString" RightHandSide="byteString.concat(DELIMITER)" />
+                <Assignment LeftHandSide="byteString" RightHandSide="byteString.concat(j2.toString())" />
+                <Assignment LeftHandSide="byteString" RightHandSide="byteString.concat(DELIMITER)" />
+                <Assignment LeftHandSide="byteString" RightHandSide="byteString.concat(ii.getParentAlbumName())" />
+                <Assignment LeftHandSide="byteString" RightHandSide="byteString.concat(DELIMITER)" />
+                <Assignment LeftHandSide="byteString" RightHandSide="byteString.concat(ii.getImageLabel())" />
+              </MethodAssignments>
+              <MethodExceptions />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Package>
+  </Packages>
+</Project>
