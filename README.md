@@ -17,7 +17,7 @@ Figure 1. Graphical User Interface of GhrandalCodeCity
 > **▶️ Tutorial:** Click the image below to watch the complete CodeParser tutorial.
 
 <a href="https://drive.google.com/file/d/1ddQ4qqoJxnbrWJM5qvo9BQ64MOkCyCsU/view?usp=sharing">
-  <img src="Images/CodeParser.jpg" alt="CodeParser Tutorial" width="400">
+  <img src="Figures/classBu.png" alt="CodeParser Tutorial" width="400">
 </a>
 
 
