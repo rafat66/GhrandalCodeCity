@@ -9,18 +9,6 @@ The tool is designed for software comprehension, software architecture explorati
 <img src="Figures/GUI.png" alt="Graphical User Interface of GhrandalCodeCity" width="800"><br>
 Figure 1. Graphical User Interface of GhrandalCodeCity
 
-
----
-
-## 🎥 CodeParser Tutorial
-
-> **▶️ Tutorial:** Click the image below to watch the complete CodeParser tutorial.
-
-<a href="https://drive.google.com/file/d/1ddQ4qqoJxnbrWJM5qvo9BQ64MOkCyCsU/view?usp=sharing">
-  <img src="Figures/classBu.png" alt="CodeParser Tutorial" width="400">
-</a>
-
-
 ---
 
 ## Overview
@@ -43,6 +31,18 @@ This representation allows developers and researchers to explore the organizatio
 
 <img src="Figures/SoftwareCity.png" alt="The GhrandalCodeCity software city metaphor" width="600"><br>
 Figure 2. The GhrandalCodeCity software city metaphor and its visual metrics
+
+
+---
+
+## 🎥 GhrandalCodeCity Tutorial
+
+> **▶️ Tutorial:** Click the image below to view the complete tutorial on using GhrandalCodeCity.
+
+<a href="https://drive.google.com/file/d/1ddQ4qqoJxnbrWJM5qvo9BQ64MOkCyCsU/view?usp=sharing">
+  <img src="Figures/classBu.png" alt="GhrandalCodeCity Tutorial" width="500">
+</a>
+
 
 ---
 
