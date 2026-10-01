@@ -39,7 +39,7 @@ Figure 2. The GhrandalCodeCity software city metaphor and its visual metrics
 
 > **▶️ Tutorial:** Click the image below to view the complete tutorial on using GhrandalCodeCity.
 
-<a href="https://drive.google.com/file/d/1ddQ4qqoJxnbrWJM5qvo9BQ64MOkCyCsU/view?usp=sharing">
+<a href="https://drive.google.com/file/d/1m0SNjthFtBufUpsTIdbKiaVZsMPOvYad/view?usp=sharing">
   <img src="Figures/classBu.png" alt="GhrandalCodeCity Tutorial" width="500">
 </a>
 
